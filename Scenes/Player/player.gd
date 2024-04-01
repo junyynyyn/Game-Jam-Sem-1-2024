@@ -6,6 +6,7 @@ var interact_area
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interact_area = $InteractArea
+	Globals.player = self
 
 # Just movement code atm
 func _process(delta):
@@ -13,6 +14,17 @@ func _process(delta):
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
 	velocity = direction * SPEED
+	
+	if (velocity.x > 0):
+		$AnimatedSprite2D.play("right")
+	elif (velocity.x < 0):
+		$AnimatedSprite2D.play("left")
+	if (velocity.y > 0):
+		$AnimatedSprite2D.play("down")
+	elif (velocity.y < 0):
+		$AnimatedSprite2D.play("up")
+	elif (velocity.x == 0 and velocity.y == 0):
+		$AnimatedSprite2D.stop()
 	
 	# Code to interact with object
 	if (len(interact_area.get_overlapping_areas()) > 0):
@@ -35,3 +47,11 @@ func _process(delta):
 
 func get_distance(position):
 	return self.position - position
+
+func think(message):
+	$ThoughtBubble/Label.text = message
+	$ThoughtBubble.show()
+	$ThoughtBubble/MessageTimer.start()
+
+func _on_timer_timeout():
+	$ThoughtBubble.hide()

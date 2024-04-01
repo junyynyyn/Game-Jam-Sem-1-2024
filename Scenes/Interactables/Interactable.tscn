@@ -6,14 +6,13 @@
 [node name="InteractableArea" type="Area2D" groups=["Interactable"]]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1.5)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8oc04")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.5)
 
 [node name="InteractPrompt" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1, -120)
-scale = Vector2(6.8125, 6.8125)
 texture = ExtResource("2_hrqn0")

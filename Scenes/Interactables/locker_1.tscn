@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgsc3v58t57o2"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_oqy6i"]
+[ext_resource type="Texture2D" uid="uid://tlgubt5feelu" path="res://assets/asesprite/drawer1.png" id="2_3y1se"]
+[ext_resource type="Script" path="res://Scenes/Interactables/locker_1.gd" id="2_sfxqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkapf"]
+size = Vector2(16, 11)
+
+[node name="Locker" instance=ExtResource("1_oqy6i")]
+script = ExtResource("2_sfxqc")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_3y1se")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_xkapf")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(1, -13)

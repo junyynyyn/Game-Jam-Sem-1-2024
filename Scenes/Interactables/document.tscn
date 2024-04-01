@@ -10,14 +10,13 @@ size = Vector2(11, 8)
 [node name="Document" instance=ExtResource("1_pjlpc")]
 script = ExtResource("2_e0enq")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_22j04")
+
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_xv300")
-
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("2_22j04")
 
 [node name="InteractPrompt" parent="." index="2"]
 visible = true
 position = Vector2(0, -13)
-scale = Vector2(1, 1)

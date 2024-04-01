@@ -5,4 +5,4 @@ func _ready():
 	super()
 
 func use():
-	print("Document!")
+	Globals.player.think("A list of keys")

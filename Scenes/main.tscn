@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=17 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
 [ext_resource type="Texture2D" uid="uid://44t7t2djl3r1" path="res://assets/asesprite/floor_tile_1.png" id="1_otou2"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cbgpqcm3ohj88" path="res://Scenes/UI/countdown_timer.tscn" id="4_l4aym"]
 [ext_resource type="PackedScene" uid="uid://bcgqwy3f30d1c" path="res://Scenes/Interactables/document.tscn" id="9_nrrgc"]
 [ext_resource type="Texture2D" uid="uid://btcnfnria6m48" path="res://assets/asesprite/vault_door.png" id="9_ua0k1"]
+[ext_resource type="PackedScene" uid="uid://bylexggh5e34i" path="res://Scenes/Interactables/Camera.tscn" id="10_8nqs8"]
+[ext_resource type="PackedScene" uid="uid://dgsc3v58t57o2" path="res://Scenes/Interactables/locker_1.tscn" id="11_xp064"]
+[ext_resource type="PackedScene" uid="uid://doquehgem0lgg" path="res://Scenes/Interactables/locker_med.tscn" id="12_hqnya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nu6ht"]
 texture = ExtResource("1_otou2")
@@ -70,8 +73,26 @@ position = Vector2(168, 10)
 [node name="Document" parent="Interactables" instance=ExtResource("9_nrrgc")]
 position = Vector2(160, 17)
 
+[node name="Camera" parent="Interactables" instance=ExtResource("10_8nqs8")]
+position = Vector2(180, -185)
+
+[node name="Locker3" parent="Interactables" instance=ExtResource("11_xp064")]
+position = Vector2(-174, -166)
+
+[node name="Locker2" parent="Interactables" instance=ExtResource("11_xp064")]
+position = Vector2(-174, -152)
+
+[node name="Locker1" parent="Interactables" instance=ExtResource("11_xp064")]
+position = Vector2(-174, -138)
+
+[node name="LockerMed" parent="Interactables" instance=ExtResource("12_hqnya")]
+position = Vector2(-144, -146)
+
+[node name="LockerMed2" parent="Interactables" instance=ExtResource("12_hqnya")]
+position = Vector2(-112, -146)
+
 [node name="Player" parent="." instance=ExtResource("1_51ryb")]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -82,3 +103,6 @@ scale = Vector2(0.2, 0.2)
 [node name="VaultDoor" type="Sprite2D" parent="."]
 position = Vector2(2, -163)
 texture = ExtResource("9_ua0k1")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.721569, 0.721569, 0.721569, 1)

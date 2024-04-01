@@ -13,12 +13,12 @@ size = Vector2(21, 55)
 [node name="Desk" instance=ExtResource("1_r1etp")]
 script = ExtResource("2_w3e4j")
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_qjh37")
+
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-8.5, -1.5)
 shape = SubResource("RectangleShape2D_myr6q")
-
-[node name="Sprite2D" parent="." index="1"]
-texture = ExtResource("3_qjh37")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
@@ -29,4 +29,3 @@ shape = SubResource("RectangleShape2D_upftp")
 [node name="InteractPrompt" parent="." index="3"]
 visible = true
 position = Vector2(-8, -24)
-scale = Vector2(1, 1)
