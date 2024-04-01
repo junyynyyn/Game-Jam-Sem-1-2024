@@ -6,7 +6,7 @@ extends CharacterBody2D
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Just movement code atm
 func _process(delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()

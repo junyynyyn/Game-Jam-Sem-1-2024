@@ -1,6 +1,7 @@
 class_name Item
 extends Node
 
+# Base inventory class, probably will need to update, atm just placeholder for sprite
 @export var item_name: String
 @export var sprite: String
 

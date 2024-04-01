@@ -9,6 +9,7 @@ var inventoryUI
 func _ready():
 	inventoryUI = get_tree().root.get_node("/root/Main/UI/InventoryUI")
 
+# Helper functions for inventory
 func isFull(): 
 	return len(itemList) >= 5
 	
