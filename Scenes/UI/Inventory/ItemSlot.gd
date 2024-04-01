@@ -2,7 +2,6 @@ extends TextureRect
 
 var item
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
@@ -12,3 +11,5 @@ func set_item(item):
 func display_item():
 	if (item):
 		texture = load(item.get_sprite())
+	else:
+		texture = load("res://assets/kenney_roguelike-modern-city/Tiles/tile_0000.png")
