@@ -7,7 +7,7 @@
 size = Vector2(113.333, 113.333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2gs5"]
-radius = 80.0694
+radius = 70.0793
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.3, 0.3)

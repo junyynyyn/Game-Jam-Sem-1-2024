@@ -20,6 +20,7 @@ func _process(delta):
 		var closest_dist
 		for area in interact_area.get_overlapping_areas():
 			if area.is_in_group("Interactable"):
+				area.hide_interact_area()
 				if (not closest):
 					closest = area
 					closest_dist = abs(position - area.position)
@@ -27,7 +28,7 @@ func _process(delta):
 					if (abs(position - area.position) < closest_dist):
 						closest = area
 						closest_dist =  abs(position - area.position)
-						
+		closest.show_interact_area()
 		if (Input.is_action_just_pressed("interact")):
 			closest.use()
 	move_and_slide()

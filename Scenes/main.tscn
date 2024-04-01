@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=14 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
 [ext_resource type="Texture2D" uid="uid://44t7t2djl3r1" path="res://assets/asesprite/floor_tile_1.png" id="1_otou2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ct5fghhdtj8p7" path="res://assets/asesprite/pillar_wall.png" id="3_k5pym"]
 [ext_resource type="PackedScene" uid="uid://c0gao1xnbnjao" path="res://Scenes/Interactables/desk.tscn" id="4_6qdp2"]
 [ext_resource type="PackedScene" uid="uid://cbgpqcm3ohj88" path="res://Scenes/UI/countdown_timer.tscn" id="4_l4aym"]
+[ext_resource type="PackedScene" uid="uid://bcgqwy3f30d1c" path="res://Scenes/Interactables/document.tscn" id="9_nrrgc"]
 [ext_resource type="Texture2D" uid="uid://btcnfnria6m48" path="res://assets/asesprite/vault_door.png" id="9_ua0k1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nu6ht"]
@@ -65,6 +66,9 @@ layer_1/tile_data = PackedInt32Array(262141, 5, 2, 196605, 5, 2, 131069, 4, 0, 1
 
 [node name="Desk" parent="Interactables" instance=ExtResource("4_6qdp2")]
 position = Vector2(168, 10)
+
+[node name="Document" parent="Interactables" instance=ExtResource("9_nrrgc")]
+position = Vector2(160, 17)
 
 [node name="Player" parent="." instance=ExtResource("1_51ryb")]
 scale = Vector2(0.2, 0.2)

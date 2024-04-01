@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcgqwy3f30d1c"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_pjlpc"]
+[ext_resource type="Texture2D" uid="uid://clg13jw6p58ls" path="res://assets/asesprite/document.png" id="2_22j04"]
+[ext_resource type="Script" path="res://Scenes/Interactables/document.gd" id="2_e0enq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv300"]
+size = Vector2(11, 8)
+
+[node name="Document" instance=ExtResource("1_pjlpc")]
+script = ExtResource("2_e0enq")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_xv300")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_22j04")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(0, -13)
+scale = Vector2(1, 1)
