@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 @export var SPEED : float = 150.0
+var interact_area
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	interact_area = $InteractArea
 
 # Just movement code atm
 func _process(delta):
@@ -12,4 +13,24 @@ func _process(delta):
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
 	velocity = direction * SPEED
+	
+	# Code to interact with object
+	if (len(interact_area.get_overlapping_areas()) > 0):
+		var closest
+		var closest_dist
+		for area in interact_area.get_overlapping_areas():
+			if area.is_in_group("Interactable"):
+				if (not closest):
+					closest = area
+					closest_dist = abs(position - area.position)
+				else:
+					if (abs(position - area.position) < closest_dist):
+						closest = area
+						closest_dist =  abs(position - area.position)
+						
+		if (Input.is_action_just_pressed("interact")):
+			closest.use()
 	move_and_slide()
+
+func get_distance(position):
+	return self.position - position

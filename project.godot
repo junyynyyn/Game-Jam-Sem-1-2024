@@ -18,11 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 InventoryGlobal="*res://Scenes/UI/Inventory/inventory_global.gd"
+Globals="*res://Scenes/globals.gd"
 
 [display]
 
 window/size/viewport_width=480
-window/size/viewport_height=256
+window/size/viewport_height=300
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"

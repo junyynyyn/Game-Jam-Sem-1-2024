@@ -3,15 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://b7u5tdu1rhewe" path="res://icon.svg" id="1_8oc04"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1psnm"]
-size = Vector2(128, 129)
+size = Vector2(47, 62)
 
-[node name="Interactable" type="Node2D"]
+[node name="InteractableArea" type="Area2D" groups=["Interactable"]]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_1psnm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8oc04")
 
-[node name="InteractableArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableArea"]
-position = Vector2(-1, -1.5)
-shape = SubResource("RectangleShape2D_1psnm")
+[node name="InteractPrompt" type="Sprite2D" parent="."]
