@@ -1,5 +1,5 @@
 class_name Item
-extends TextureRect
+extends Node
 
 @export var item_name: String
 @export var sprite: String

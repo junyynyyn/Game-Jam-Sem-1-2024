@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpu6lhn5cs3ta"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_ka03j"]
+[ext_resource type="Script" path="res://Scenes/Interactables/test_interactable.gd" id="2_wuwsb"]
+[ext_resource type="Script" path="res://Scenes/Items/Item.gd" id="3_j8nxp"]
+
+[node name="Interactable" instance=ExtResource("1_ka03j")]
+script = ExtResource("2_wuwsb")
+
+[node name="Item" type="Node" parent="." index="2"]
+script = ExtResource("3_j8nxp")
+item_name = "paperclip"
+sprite = "res://icon.svg"

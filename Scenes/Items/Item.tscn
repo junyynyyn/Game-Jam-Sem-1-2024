@@ -2,9 +2,5 @@
 
 [ext_resource type="Script" path="res://Scenes/Items/Item.gd" id="1_tj8eu"]
 
-[node name="Item" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Node" type="Node"]
 script = ExtResource("1_tj8eu")

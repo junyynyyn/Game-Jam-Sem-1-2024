@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	display_items()
+	pass
 
 func display_items():
 	var items = InventoryGlobal.get_items()

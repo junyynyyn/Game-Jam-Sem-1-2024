@@ -4,7 +4,7 @@ var item
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	display_item()
+	pass
 
 func set_item(item):
 	self.item = item

@@ -4,11 +4,10 @@ var max_capacity = 5
 var selected_slot = 0
 
 var itemList = []
+var inventoryUI
 
 func _ready():
-	var oneItem = Item.new()
-	oneItem.sprite = "icon.svg"
-	add_item(oneItem)
+	inventoryUI = get_tree().root.get_node("/root/Main/UI/InventoryUI")
 
 func isFull(): 
 	return len(itemList) >= 5
@@ -16,6 +15,7 @@ func isFull():
 func add_item(item):
 	if (not isFull()): 
 		itemList.append(item)
+		inventoryUI.display_items()
 		return true
 	else:
 		return false

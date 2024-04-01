@@ -5,7 +5,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5vii5"]
 
-[node name="Inventory" type="Control"]
+[node name="InventoryUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
