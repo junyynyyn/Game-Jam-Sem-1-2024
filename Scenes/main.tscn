@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=37 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_jsu8u"]
@@ -10,14 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://dt0nad05s1lk0" path="res://assets/asesprite/wall_middle_32x32.png" id="4_4vo3t"]
 [ext_resource type="PackedScene" uid="uid://c0gao1xnbnjao" path="res://Scenes/Interactables/desk.tscn" id="4_6qdp2"]
 [ext_resource type="PackedScene" uid="uid://cbgpqcm3ohj88" path="res://Scenes/UI/countdown_timer.tscn" id="4_l4aym"]
+[ext_resource type="Texture2D" uid="uid://3m6mf2w8n8gl" path="res://assets/asesprite/wall_edge_32x32.png" id="5_h0nsr"]
 [ext_resource type="Texture2D" uid="uid://cq5q185h20df8" path="res://assets/asesprite/wall_top_32x32.png" id="6_06m3y"]
-[ext_resource type="Texture2D" uid="uid://btlxloakm1f1v" path="res://assets/asesprite/wall_corner.png" id="7_n6c7p"]
+[ext_resource type="Texture2D" uid="uid://dkg1dwdsmxpnu" path="res://assets/asesprite/wall_corner_32x32.png" id="6_qt0vi"]
 [ext_resource type="PackedScene" uid="uid://bcgqwy3f30d1c" path="res://Scenes/Interactables/document.tscn" id="9_nrrgc"]
 [ext_resource type="Texture2D" uid="uid://s7g5t3k7tev0" path="res://assets/asesprite/lockboxes_1.png" id="10_2g8cw"]
 [ext_resource type="PackedScene" uid="uid://bylexggh5e34i" path="res://Scenes/Interactables/Camera.tscn" id="10_8nqs8"]
 [ext_resource type="PackedScene" uid="uid://c37d1r50ryitx" path="res://Scenes/Interactables/chair.tscn" id="10_xfd2b"]
 [ext_resource type="PackedScene" uid="uid://dgsc3v58t57o2" path="res://Scenes/Interactables/locker_1.tscn" id="11_xp064"]
-[ext_resource type="Texture2D" uid="uid://c23tgpkeiqr7x" path="res://assets/asesprite/wall_edge.png" id="12_a24ce"]
 [ext_resource type="PackedScene" uid="uid://doquehgem0lgg" path="res://Scenes/Interactables/locker_med.tscn" id="12_hqnya"]
 [ext_resource type="PackedScene" uid="uid://db8v8wf0ia11b" path="res://Scenes/Interactables/locker_tall.tscn" id="13_uabk2"]
 [ext_resource type="PackedScene" uid="uid://dq0ig7f5tx2ot" path="res://Scenes/Interactables/locker_wide.tscn" id="14_g02k6"]
@@ -26,24 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://bmhds3kpeoa8m" path="res://Scenes/UI/document_ui.tscn" id="16_oqbuu"]
 [ext_resource type="PackedScene" uid="uid://dh4h0a0rwpeuc" path="res://Scenes/Interactables/vault_door.tscn" id="19_sosvb"]
 [ext_resource type="AudioStream" uid="uid://dqyv36udash3o" path="res://assets/locked_in.mp3" id="21_lqmlj"]
+[ext_resource type="PackedScene" uid="uid://dxc2vjc6wkrh7" path="res://Scenes/Interactables/power_box.tscn" id="27_hydix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m42uc"]
 texture = ExtResource("3_ofuaf")
 texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be3ns"]
-texture = ExtResource("7_n6c7p")
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxm6v"]
-texture = ExtResource("12_a24ce")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -59,6 +46,22 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgqcy"]
 texture = ExtResource("6_06m3y")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffsib"]
+texture = ExtResource("5_h0nsr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7skbv"]
+texture = ExtResource("6_qt0vi")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -104,10 +107,10 @@ sources/4 = SubResource("TileSetAtlasSource_wjlt4")
 sources/5 = SubResource("TileSetAtlasSource_waqea")
 sources/3 = SubResource("TileSetAtlasSource_nu6ht")
 sources/13 = SubResource("TileSetAtlasSource_m42uc")
-sources/14 = SubResource("TileSetAtlasSource_be3ns")
-sources/15 = SubResource("TileSetAtlasSource_wxm6v")
 sources/17 = SubResource("TileSetAtlasSource_vf6tk")
 sources/18 = SubResource("TileSetAtlasSource_xgqcy")
+sources/19 = SubResource("TileSetAtlasSource_ffsib")
+sources/20 = SubResource("TileSetAtlasSource_7skbv")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jsu8u")
@@ -119,7 +122,7 @@ zoom = Vector2(0.7, 0.7)
 tile_set = SubResource("TileSet_3hs38")
 format = 2
 layer_0/name = "Floor"
-layer_0/tile_data = PackedInt32Array(-196614, 3, 0, -131078, 3, 0, -65542, 3, 0, -6, 3, 0, 65530, 3, 0, 131066, 3, 0, 196602, 3, 0, 262138, 3, 0, -196613, 3, 0, -131077, 3, 0, -65541, 3, 0, -5, 3, 0, 65531, 3, 0, 131067, 3, 0, 196603, 3, 0, 262139, 3, 0, -196612, 3, 0, -131076, 3, 0, -65540, 3, 0, -4, 3, 0, 65532, 3, 0, 131068, 3, 0, 196604, 3, 0, 262140, 3, 0, -196611, 3, 0, -131075, 3, 0, -65539, 3, 0, -3, 3, 0, 65533, 3, 0, 131069, 3, 0, 196605, 3, 0, 262141, 3, 0, -196610, 3, 0, -131074, 3, 0, -65538, 3, 0, -2, 3, 0, 65534, 3, 0, 131070, 3, 0, 196606, 3, 0, 262142, 3, 0, -196609, 3, 0, -131073, 3, 0, -65537, 3, 0, -1, 3, 0, 65535, 3, 0, 131071, 3, 0, 196607, 3, 0, 262143, 3, 0, -262144, 3, 0, -196608, 3, 0, -131072, 3, 0, -65536, 3, 0, 0, 3, 0, 65536, 3, 0, 131072, 3, 0, 196608, 3, 0, -262143, 3, 0, -196607, 3, 0, -131071, 3, 0, -65535, 3, 0, 1, 3, 0, 65537, 3, 0, 131073, 3, 0, 196609, 3, 0, -262142, 3, 0, -196606, 3, 0, -131070, 3, 0, -65534, 3, 0, 2, 3, 0, 65538, 3, 0, 131074, 3, 0, 196610, 3, 0, -262141, 3, 0, -196605, 3, 0, -131069, 3, 0, -65533, 3, 0, 3, 3, 0, 65539, 3, 0, 131075, 3, 0, 196611, 3, 0, -262140, 3, 0, -196604, 3, 0, -131068, 3, 0, -65532, 3, 0, 4, 3, 0, 65540, 3, 0, 131076, 3, 0, 196612, 3, 0, -262139, 3, 0, -196603, 3, 0, -131067, 3, 0, -65531, 3, 0, 5, 3, 0, 65541, 3, 0, 131077, 3, 0, 196613, 3, 0, 327674, 3, 0, 327675, 3, 0, 327676, 3, 0, 327677, 3, 0, 327678, 3, 0, 327679, 3, 0, 262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 393210, 3, 0, 393211, 3, 0, 393212, 3, 0, 393213, 3, 0, 393214, 3, 0, 393215, 3, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, -262150, 13, 0, -262149, 13, 0, -262148, 13, 0, -262147, 13, 0, -262146, 13, 0, -262145, 13, 0, -327680, 13, 0, -327679, 13, 0, -327678, 13, 0, -327677, 13, 0, -327676, 13, 0, -327675, 13, 0, 458745, 18, 0, 393222, 18, 0, -327686, 17, 0, -327685, 17, 0, -327684, 17, 0, -327683, 17, 0, -327682, 17, 0, -327681, 17, 0, -393216, 17, 0, -393215, 17, 0, -393214, 17, 0, -393213, 17, 0, -393212, 17, 0, -393211, 17, 0, -393222, 18, 0, -393221, 18, 0, -393220, 18, 0, -393219, 18, 0, -393218, 18, 0, -393217, 18, 0, -458752, 18, 0, -458751, 18, 0, -458750, 18, 0, -458749, 18, 0, -458748, 18, 0, -458747, 18, 0, 458746, 18, 0, 458747, 18, 0, 458748, 18, 0, 458749, 18, 0, 458750, 18, 0, 458751, 18, 0, 393216, 18, 0, 393217, 18, 0, 393218, 18, 0, 393219, 18, 0, 393220, 18, 0, 393221, 18, 0, 524281, 17, 0, 524282, 17, 0, 524283, 17, 0, 524284, 17, 0, 524285, 17, 0, 524286, 17, 0, 524287, 17, 0, 458752, 17, 0, 458753, 17, 0, 458754, 17, 0, 458755, 17, 0, 458756, 17, 0, 458757, 17, 0, 458758, 17, 0, 589817, 13, 0, 589818, 13, 0, 589819, 13, 0, 589820, 13, 0, 589821, 13, 0, 589822, 13, 0, 589823, 13, 0, 524288, 13, 0, 524289, 13, 0, 524290, 13, 0, 524291, 13, 0, 524292, 13, 0, 524293, 13, 0, 524294, 13, 0)
+layer_0/tile_data = PackedInt32Array(-196614, 3, 0, -131078, 3, 0, -65542, 3, 0, -6, 3, 0, 65530, 3, 0, 131066, 3, 0, 196602, 3, 0, 262138, 3, 0, -196613, 3, 0, -131077, 3, 0, -65541, 3, 0, -5, 3, 0, 65531, 3, 0, 131067, 3, 0, 196603, 3, 0, 262139, 3, 0, -196612, 3, 0, -131076, 3, 0, -65540, 3, 0, -4, 3, 0, 65532, 3, 0, 131068, 3, 0, 196604, 3, 0, 262140, 3, 0, -196611, 3, 0, -131075, 3, 0, -65539, 3, 0, -3, 3, 0, 65533, 3, 0, 131069, 3, 0, 196605, 3, 0, 262141, 3, 0, -196610, 3, 0, -131074, 3, 0, -65538, 3, 0, -2, 3, 0, 65534, 3, 0, 131070, 3, 0, 196606, 3, 0, 262142, 3, 0, -196609, 3, 0, -131073, 3, 0, -65537, 3, 0, -1, 3, 0, 65535, 3, 0, 131071, 3, 0, 196607, 3, 0, 262143, 3, 0, -262144, 3, 0, -196608, 3, 0, -131072, 3, 0, -65536, 3, 0, 0, 3, 0, 65536, 3, 0, 131072, 3, 0, 196608, 3, 0, -262143, 3, 0, -196607, 3, 0, -131071, 3, 0, -65535, 3, 0, 1, 3, 0, 65537, 3, 0, 131073, 3, 0, 196609, 3, 0, -262142, 3, 0, -196606, 3, 0, -131070, 3, 0, -65534, 3, 0, 2, 3, 0, 65538, 3, 0, 131074, 3, 0, 196610, 3, 0, -262141, 3, 0, -196605, 3, 0, -131069, 3, 0, -65533, 3, 0, 3, 3, 0, 65539, 3, 0, 131075, 3, 0, 196611, 3, 0, -262140, 3, 0, -196604, 3, 0, -131068, 3, 0, -65532, 3, 0, 4, 3, 0, 65540, 3, 0, 131076, 3, 0, 196612, 3, 0, -262139, 3, 0, -196603, 3, 0, -131067, 3, 0, -65531, 3, 0, 5, 3, 0, 65541, 3, 0, 131077, 3, 0, 196613, 3, 0, 327674, 3, 0, 327675, 3, 0, 327676, 3, 0, 327677, 3, 0, 327678, 3, 0, 327679, 3, 0, 262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 393210, 3, 0, 393211, 3, 0, 393212, 3, 0, 393213, 3, 0, 393214, 3, 0, 393215, 3, 0, 327680, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, -262150, 13, 0, -262149, 13, 0, -262148, 13, 0, -262147, 13, 0, -262146, 13, 0, -262145, 13, 0, -327680, 13, 0, -327679, 13, 0, -327678, 13, 0, -327677, 13, 0, -327676, 13, 0, -327675, 13, 0, 458745, 20, 0, 393222, 20, 0, -327686, 17, 0, -327685, 17, 0, -327684, 17, 0, -327683, 17, 0, -327682, 17, 0, -327681, 17, 0, -393216, 17, 0, -393215, 17, 0, -393214, 17, 0, -393213, 17, 0, -393212, 17, 0, -393211, 17, 0, -393222, 18, 0, -393221, 18, 0, -393220, 18, 0, -393219, 18, 0, -393218, 18, 0, -393217, 18, 0, -458752, 18, 0, -458751, 18, 0, -458750, 18, 0, -458749, 18, 0, -458748, 18, 0, -458747, 18, 0, 458746, 18, 0, 458747, 18, 0, 458748, 18, 0, 458749, 18, 0, 458750, 18, 0, 458751, 18, 0, 393216, 18, 0, 393217, 18, 0, 393218, 18, 0, 393219, 18, 0, 393220, 18, 0, 393221, 18, 0, 524281, 17, 0, 524282, 17, 0, 524283, 17, 0, 524284, 17, 0, 524285, 17, 0, 524286, 17, 0, 524287, 17, 0, 458752, 17, 0, 458753, 17, 0, 458754, 17, 0, 458755, 17, 0, 458756, 17, 0, 458757, 17, 0, 458758, 17, 0, 589817, 13, 0, 589818, 13, 0, 589819, 13, 0, 589820, 13, 0, 589821, 13, 0, 589822, 13, 0, 589823, 13, 0, 524288, 13, 0, 524289, 13, 0, 524290, 13, 0, 524291, 13, 0, 524292, 13, 0, 524293, 13, 0, 524294, 13, 0, -327687, 19, 0, -262151, 19, 0, -196615, 19, 0, -131079, 19, 0, -65543, 19, 0, -7, 19, 0, 65529, 19, 0, 131065, 19, 0, 196601, 19, 0, 262137, 19, 0, 327673, 19, 0, 393209, 19, 0, -393210, 19, 0, -327674, 19, 0, -262138, 19, 0, -196602, 19, 0, -131066, 19, 0, -65530, 19, 0, 6, 19, 0, 65542, 19, 0, 131078, 19, 0, 196614, 19, 0, 262150, 19, 0, 327686, 19, 0, -393223, 20, 0, -458746, 20, 0)
 layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array(262141, 5, 2, 196605, 5, 2, 131069, 4, 0, 196610, 5, 2, 131074, 5, 2, 65538, 4, 0, -3, 5, 2, -65539, 5, 2, -131075, 4, 0, -65534, 5, 2, -131070, 5, 2, -196606, 4, 0)
 
@@ -145,36 +148,47 @@ texture = ExtResource("10_2g8cw")
 
 [node name="Locker4" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
 position = Vector2(-51, -16)
+locker_name = "A-S1"
 
 [node name="Locker3" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
 position = Vector2(-51, -3)
+locker_name = "A-S2"
 
 [node name="Locker2" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
 position = Vector2(-51, 11)
+locker_name = "A-S3"
 
 [node name="Locker" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
 position = Vector2(-51, 24)
+locker_name = "A-S4"
 
 [node name="Locker5" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
 position = Vector2(9, -12)
+locker_name = "A-S5"
 
 [node name="LockerMed" parent="Interactables/Lockbox1" instance=ExtResource("12_hqnya")]
 position = Vector2(-23, 2)
+locker_name = "A-L1"
 
 [node name="LockerMed2" parent="Interactables/Lockbox1" instance=ExtResource("12_hqnya")]
 position = Vector2(9, 12)
+locker_name = "A-L2"
 
 [node name="LockerTall3" parent="Interactables/Lockbox1" instance=ExtResource("13_uabk2")]
 position = Vector2(55, -3)
+locker_name = "A-T3"
 
 [node name="LockerTall2" parent="Interactables/Lockbox1" instance=ExtResource("13_uabk2")]
 position = Vector2(42, -3)
+locker_name = "A-T2"
 
 [node name="LockerTall" parent="Interactables/Lockbox1" instance=ExtResource("13_uabk2")]
 position = Vector2(29, -3)
+locker_name = "A-T1"
 
 [node name="LockerWide" parent="Interactables/Lockbox1" instance=ExtResource("14_g02k6")]
 position = Vector2(42, 22)
+locker_name = "A-W1"
 
 [node name="Lockbox2" type="Node2D" parent="Interactables"]
 position = Vector2(106, -149)
@@ -184,36 +198,47 @@ texture = ExtResource("10_2g8cw")
 
 [node name="Locker4" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
 position = Vector2(-51, -16)
+locker_name = "B-S1"
 
 [node name="Locker3" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
 position = Vector2(-51, -3)
+locker_name = "B-S2"
 
 [node name="Locker2" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
 position = Vector2(-51, 11)
+locker_name = "B-S3"
 
 [node name="Locker" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
 position = Vector2(-51, 24)
+locker_name = "B-S4"
 
 [node name="Locker5" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
 position = Vector2(9, -12)
+locker_name = "B-S5"
 
 [node name="LockerMed" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
 position = Vector2(-23, 2)
+locker_name = "B-L1"
 
 [node name="LockerMed2" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
 position = Vector2(9, 12)
+locker_name = "B-L2"
 
 [node name="LockerTall3" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
 position = Vector2(55, -3)
+locker_name = "B-T3"
 
 [node name="LockerTall2" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
 position = Vector2(42, -3)
+locker_name = "B-T2"
 
 [node name="LockerTall" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
 position = Vector2(29, -3)
+locker_name = "B-T1"
 
 [node name="LockerWide" parent="Interactables/Lockbox2" instance=ExtResource("14_g02k6")]
 position = Vector2(42, 22)
+locker_name = "B-W1"
 
 [node name="VaultDoor" parent="Interactables" instance=ExtResource("19_sosvb")]
 position = Vector2(0, -168)
@@ -279,3 +304,6 @@ color = Color(0.156863, 0.156863, 0.156863, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_lqmlj")
 autoplay = true
+
+[node name="PowerBox" parent="." instance=ExtResource("27_hydix")]
+position = Vector2(-192, -48)

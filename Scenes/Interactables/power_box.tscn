@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxc2vjc6wkrh7"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_138w5"]
+[ext_resource type="Texture2D" uid="uid://bsq7lropc61dw" path="res://assets/asesprite/power_box.png" id="2_1p0pf"]
+[ext_resource type="Script" path="res://Scenes/Interactables/power_box.gd" id="2_t1o1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrsln"]
+size = Vector2(22, 32)
+
+[node name="PowerBox" instance=ExtResource("1_138w5")]
+script = ExtResource("2_t1o1x")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_1p0pf")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_xrsln")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(0, -27)

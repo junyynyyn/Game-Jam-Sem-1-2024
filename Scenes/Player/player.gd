@@ -44,7 +44,6 @@ func _process(_delta):
 		if (Input.is_action_just_pressed("interact")):
 			closest.use()
 	
-	
 	# Using an object in inventory
 	if (Input.is_action_just_pressed("use")):
 		InventoryGlobal.use_selected_item()
