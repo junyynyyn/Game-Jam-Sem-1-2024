@@ -83,7 +83,7 @@ radius = 21.0238
 
 [sub_resource type="Theme" id="Theme_h411v"]
 default_font = ExtResource("15_so32d")
-default_font_size = 4
+default_font_size = 5
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_uw6gm")
@@ -107,17 +107,18 @@ visible = false
 
 [node name="Sprite2D" type="Sprite2D" parent="ThoughtBubble"]
 modulate = Color(0.247059, 0.247059, 0.247059, 0.470588)
-position = Vector2(2.38419e-07, -22)
-scale = Vector2(0.4, 0.4)
+position = Vector2(2.38419e-07, -26)
+scale = Vector2(0.4, 0.666667)
 texture = ExtResource("14_ch5m1")
 
 [node name="Label" type="Label" parent="ThoughtBubble"]
 offset_left = -38.0
-offset_top = -29.0
+offset_top = -37.0
 offset_right = 39.0
-offset_bottom = -10.0
+offset_bottom = -18.0
 theme = SubResource("Theme_h411v")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="MessageTimer" type="Timer" parent="ThoughtBubble"]

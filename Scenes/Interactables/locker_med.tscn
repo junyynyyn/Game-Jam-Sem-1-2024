@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://doquehgem0lgg"]
 
 [ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_7844y"]
-[ext_resource type="Script" path="res://Scenes/Interactables/locker_med.gd" id="2_i4pok"]
+[ext_resource type="Script" path="res://Scenes/Interactables/Locker.gd" id="2_j24l0"]
 [ext_resource type="Texture2D" uid="uid://bkf7daxmnptlu" path="res://assets/asesprite/drawer_big_2.png" id="3_y0061"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htvke"]
 size = Vector2(24, 26)
 
 [node name="LockerMed" instance=ExtResource("1_7844y")]
-script = ExtResource("2_i4pok")
+script = ExtResource("2_j24l0")
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_y0061")
