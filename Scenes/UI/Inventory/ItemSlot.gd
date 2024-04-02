@@ -5,8 +5,8 @@ var item
 func _ready():
 	pass
 
-func set_item(item):
-	self.item = item
+func set_item(new_item):
+	self.item = new_item
 
 func display_item():
 	if (item):

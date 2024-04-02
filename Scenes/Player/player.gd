@@ -51,8 +51,8 @@ func _process(_delta):
 	
 	move_and_slide()
 
-func get_distance_from_mouse(position):
-	return abs(get_global_mouse_position().distance_to(position))
+func get_distance_from_mouse(target_position):
+	return abs(get_global_mouse_position().distance_to(target_position))
 
 func think(message):
 	$ThoughtBubble/Label.text = message
