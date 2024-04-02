@@ -23,6 +23,7 @@ func _process(_delta):
 		if (Input.is_action_just_pressed("interact") and (not cooldown)):
 			var target_val = (target_marker.position.x / 2)
 			if (progress_bar.value > target_val - THRESHOLD and progress_bar.value < target_val + THRESHOLD):
+				get_tree().paused = false
 				completed.emit()
 				end()
 			else:

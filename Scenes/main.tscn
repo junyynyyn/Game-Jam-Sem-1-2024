@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=40 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_jsu8u"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://s7g5t3k7tev0" path="res://assets/asesprite/lockboxes_1.png" id="10_2g8cw"]
 [ext_resource type="PackedScene" uid="uid://bylexggh5e34i" path="res://Scenes/Interactables/Camera.tscn" id="10_8nqs8"]
 [ext_resource type="PackedScene" uid="uid://c37d1r50ryitx" path="res://Scenes/Interactables/chair.tscn" id="10_xfd2b"]
+[ext_resource type="PackedScene" uid="uid://nbfike0grov0" path="res://Scenes/Items/paperclip.tscn" id="10_ytatd"]
 [ext_resource type="PackedScene" uid="uid://dgsc3v58t57o2" path="res://Scenes/Interactables/locker_1.tscn" id="11_xp064"]
 [ext_resource type="PackedScene" uid="uid://doquehgem0lgg" path="res://Scenes/Interactables/locker_med.tscn" id="12_hqnya"]
 [ext_resource type="PackedScene" uid="uid://db8v8wf0ia11b" path="res://Scenes/Interactables/locker_tall.tscn" id="13_uabk2"]
@@ -26,7 +27,9 @@
 [ext_resource type="PackedScene" uid="uid://bmhds3kpeoa8m" path="res://Scenes/UI/document_ui.tscn" id="16_oqbuu"]
 [ext_resource type="PackedScene" uid="uid://dh4h0a0rwpeuc" path="res://Scenes/Interactables/vault_door.tscn" id="19_sosvb"]
 [ext_resource type="AudioStream" uid="uid://dqyv36udash3o" path="res://assets/locked_in.mp3" id="21_lqmlj"]
+[ext_resource type="Script" path="res://Scenes/Minigames.gd" id="24_ibsuq"]
 [ext_resource type="PackedScene" uid="uid://dxc2vjc6wkrh7" path="res://Scenes/Interactables/power_box.tscn" id="27_hydix"]
+[ext_resource type="PackedScene" uid="uid://dyrufwpj0dlij" path="res://Scenes/Interactables/money_bag.tscn" id="30_3vtdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m42uc"]
 texture = ExtResource("3_ofuaf")
@@ -126,6 +129,10 @@ layer_0/tile_data = PackedInt32Array(-196614, 3, 0, -131078, 3, 0, -65542, 3, 0,
 layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array(262141, 5, 2, 196605, 5, 2, 131069, 4, 0, 196610, 5, 2, 131074, 5, 2, 65538, 4, 0, -3, 5, 2, -65539, 5, 2, -131075, 4, 0, -65534, 5, 2, -131070, 5, 2, -196606, 4, 0)
 
+[node name="Items" type="Node" parent="."]
+
+[node name="PaperClip" parent="Items" instance=ExtResource("10_ytatd")]
+
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Desk" parent="Interactables" instance=ExtResource("4_6qdp2")]
@@ -142,6 +149,9 @@ position = Vector2(137, 7)
 
 [node name="Lockbox1" type="Node2D" parent="Interactables"]
 position = Vector2(-112, -149)
+
+[node name="PowerBox" parent="Interactables/Lockbox1" instance=ExtResource("27_hydix")]
+position = Vector2(-80, 101)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactables/Lockbox1"]
 texture = ExtResource("10_2g8cw")
@@ -216,8 +226,9 @@ locker_name = "B-S4"
 position = Vector2(9, -12)
 locker_name = "B-S5"
 
-[node name="LockerMed" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
+[node name="LockerMed" parent="Interactables/Lockbox2" node_paths=PackedStringArray("item") instance=ExtResource("12_hqnya")]
 position = Vector2(-23, 2)
+item = NodePath("../../../Items/PaperClip")
 locker_name = "B-L1"
 
 [node name="LockerMed2" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
@@ -243,11 +254,21 @@ locker_name = "B-W1"
 [node name="VaultDoor" parent="Interactables" instance=ExtResource("19_sosvb")]
 position = Vector2(0, -168)
 
+[node name="MoneyBag" parent="Interactables" instance=ExtResource("30_3vtdh")]
+position = Vector2(-148, 147)
+
+[node name="MoneyBag3" parent="Interactables" instance=ExtResource("30_3vtdh")]
+position = Vector2(-164, 163)
+
+[node name="MoneyBag2" parent="Interactables" instance=ExtResource("30_3vtdh")]
+position = Vector2(-114, 164)
+
 [node name="Player" parent="." instance=ExtResource("1_51ryb")]
-position = Vector2(-2, -29)
+position = Vector2(2, -3)
 scale = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="InventoryUI" parent="UI" instance=ExtResource("2_xm0rl")]
 
@@ -266,8 +287,10 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("24_ibsuq")
 
 [node name="TimingMatch" parent="UI/Minigames" instance=ExtResource("15_6ld6q")]
+process_mode = 3
 visible = false
 layout_mode = 1
 offset_left = -76.0
@@ -302,8 +325,8 @@ offset_bottom = 19.0
 color = Color(0.156863, 0.156863, 0.156863, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("21_lqmlj")
 autoplay = true
 
-[node name="PowerBox" parent="." instance=ExtResource("27_hydix")]
-position = Vector2(-192, -48)
+[connection signal="completed" from="UI/Minigames/TimingMatch" to="UI/Minigames" method="_on_timing_match_completed"]
