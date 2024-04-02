@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmhds3kpeoa8m"]
+
+[ext_resource type="Texture2D" uid="uid://bw5gwaenbrt3u" path="res://assets/asesprite/paper_ui.png" id="1_77odw"]
+[ext_resource type="Script" path="res://Scenes/UI/document_ui.gd" id="1_jfdua"]
+[ext_resource type="FontFile" uid="uid://3vrbqfdvxyve" path="res://assets/kenney_ui-pack/Font/kenvector_future_thin.ttf" id="2_n1nhc"]
+[ext_resource type="Texture2D" uid="uid://cmw00fxo20fm3" path="res://assets/asesprite/paper_clip.png" id="3_pjkos"]
+[ext_resource type="PackedScene" uid="uid://nbfike0grov0" path="res://Scenes/Items/paperclip.tscn" id="5_flmd4"]
+
+[sub_resource type="Theme" id="Theme_tihyv"]
+default_font = ExtResource("2_n1nhc")
+default_font_size = 7
+
+[node name="Document_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jfdua")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.500002, -0.750008)
+scale = Vector2(2.42188, 2.42188)
+texture = ExtResource("1_77odw")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -73.0
+offset_right = 47.0
+offset_bottom = 98.0
+theme = SubResource("Theme_tihyv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Locker Items
+A1 Jewellery
+A2 Gold Credit Card
+B1 Gun
+B2 Gemstones
+B3 USB Drive
+C1 2x Art Pieces
+C3 _REDACTED_
+D1 Moonstones
+D2 Master Ball
+"
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -100.0
+offset_right = -25.0
+offset_bottom = -68.0
+rotation = 0.251293
+texture_normal = ExtResource("3_pjkos")
+texture_pressed = ExtResource("3_pjkos")
+
+[node name="PaperClip" parent="." instance=ExtResource("5_flmd4")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

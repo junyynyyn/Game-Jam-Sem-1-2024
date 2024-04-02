@@ -1,6 +1,6 @@
 extends Control
 
-var timer = 120
+var timer = 60
 var timer_label 
 
 func _ready():

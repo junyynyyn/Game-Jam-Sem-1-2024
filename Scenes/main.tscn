@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=22 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_jsu8u"]
 [ext_resource type="Texture2D" uid="uid://44t7t2djl3r1" path="res://assets/asesprite/floor_tile_1.png" id="1_otou2"]
 [ext_resource type="Texture2D" uid="uid://bkj6f7hgcl3ie" path="res://assets/asesprite/pillar_top.png" id="2_k5bgl"]
 [ext_resource type="PackedScene" uid="uid://bwus1fhdb5876" path="res://Scenes/UI/Inventory/Inventory.tscn" id="2_xm0rl"]
@@ -10,8 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://bcgqwy3f30d1c" path="res://Scenes/Interactables/document.tscn" id="9_nrrgc"]
 [ext_resource type="Texture2D" uid="uid://btcnfnria6m48" path="res://assets/asesprite/vault_door.png" id="9_ua0k1"]
 [ext_resource type="PackedScene" uid="uid://bylexggh5e34i" path="res://Scenes/Interactables/Camera.tscn" id="10_8nqs8"]
+[ext_resource type="PackedScene" uid="uid://c37d1r50ryitx" path="res://Scenes/Interactables/chair.tscn" id="10_xfd2b"]
 [ext_resource type="PackedScene" uid="uid://dgsc3v58t57o2" path="res://Scenes/Interactables/locker_1.tscn" id="11_xp064"]
 [ext_resource type="PackedScene" uid="uid://doquehgem0lgg" path="res://Scenes/Interactables/locker_med.tscn" id="12_hqnya"]
+[ext_resource type="PackedScene" uid="uid://d1va4jp6ouvxm" path="res://Scenes/Minigames/Timing Match/TimingMatch.tscn" id="15_6ld6q"]
+[ext_resource type="Script" path="res://Scenes/Info_UI.gd" id="16_ai0ot"]
+[ext_resource type="PackedScene" uid="uid://bmhds3kpeoa8m" path="res://Scenes/UI/document_ui.tscn" id="16_oqbuu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nu6ht"]
 texture = ExtResource("1_otou2")
@@ -53,6 +58,7 @@ sources/4 = SubResource("TileSetAtlasSource_wjlt4")
 sources/5 = SubResource("TileSetAtlasSource_waqea")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_jsu8u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
@@ -67,6 +73,56 @@ layer_1/tile_data = PackedInt32Array(262141, 5, 2, 196605, 5, 2, 131069, 4, 0, 1
 
 [node name="Interactables" type="Node2D" parent="."]
 
+[node name="Lockers" type="Node2D" parent="Interactables"]
+
+[node name="Locker3" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(-174, -166)
+
+[node name="Locker2" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(-174, -152)
+
+[node name="Locker1" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(-174, -138)
+
+[node name="Locker4" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(49, -170)
+
+[node name="Locker5" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(49, -156)
+
+[node name="Locker6" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(49, -142)
+
+[node name="Locker7" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(144, -170)
+
+[node name="Locker8" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(144, -156)
+
+[node name="Locker9" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(144, -142)
+
+[node name="Locker10" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(-79, -168)
+
+[node name="Locker11" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(-79, -154)
+
+[node name="Locker12" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
+position = Vector2(-79, -140)
+
+[node name="LockerMed" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
+position = Vector2(-144, -146)
+
+[node name="LockerMed2" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
+position = Vector2(-112, -146)
+
+[node name="LockerMed3" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
+position = Vector2(82, -151)
+
+[node name="LockerMed4" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
+position = Vector2(114, -151)
+
 [node name="Desk" parent="Interactables" instance=ExtResource("4_6qdp2")]
 position = Vector2(168, 10)
 
@@ -76,22 +132,15 @@ position = Vector2(160, 17)
 [node name="Camera" parent="Interactables" instance=ExtResource("10_8nqs8")]
 position = Vector2(180, -185)
 
-[node name="Locker3" parent="Interactables" instance=ExtResource("11_xp064")]
-position = Vector2(-174, -166)
+[node name="VaultDoor" type="Sprite2D" parent="Interactables"]
+position = Vector2(2, -163)
+texture = ExtResource("9_ua0k1")
 
-[node name="Locker2" parent="Interactables" instance=ExtResource("11_xp064")]
-position = Vector2(-174, -152)
-
-[node name="Locker1" parent="Interactables" instance=ExtResource("11_xp064")]
-position = Vector2(-174, -138)
-
-[node name="LockerMed" parent="Interactables" instance=ExtResource("12_hqnya")]
-position = Vector2(-144, -146)
-
-[node name="LockerMed2" parent="Interactables" instance=ExtResource("12_hqnya")]
-position = Vector2(-112, -146)
+[node name="Chair" parent="Interactables" instance=ExtResource("10_xfd2b")]
+position = Vector2(137, 7)
 
 [node name="Player" parent="." instance=ExtResource("1_51ryb")]
+position = Vector2(-26, -23)
 scale = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -100,9 +149,50 @@ scale = Vector2(2, 2)
 
 [node name="CountdownTimer" parent="UI" instance=ExtResource("4_l4aym")]
 
-[node name="VaultDoor" type="Sprite2D" parent="."]
-position = Vector2(2, -163)
-texture = ExtResource("9_ua0k1")
+[node name="Minigames" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimingMatch" parent="UI/Minigames" instance=ExtResource("15_6ld6q")]
+visible = false
+layout_mode = 1
+offset_left = -76.0
+offset_top = 71.0
+offset_right = -76.0
+offset_bottom = 71.0
+
+[node name="Info_UI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_ai0ot")
+
+[node name="Document_UI" parent="UI/Info_UI" instance=ExtResource("16_oqbuu")]
+visible = false
+layout_mode = 1
+offset_left = 10.0
+offset_top = 19.0
+offset_right = 10.0
+offset_bottom = 19.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.721569, 0.721569, 0.721569, 1)
+color = Color(0.156863, 0.156863, 0.156863, 1)

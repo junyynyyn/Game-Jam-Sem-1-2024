@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcgqwy3f30d1c"]
+[gd_scene load_steps=6 format=3 uid="uid://bcgqwy3f30d1c"]
 
 [ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_pjlpc"]
 [ext_resource type="Texture2D" uid="uid://clg13jw6p58ls" path="res://assets/asesprite/document.png" id="2_22j04"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv300"]
 size = Vector2(11, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhho1"]
+radius = 17.0294
 
 [node name="Document" instance=ExtResource("1_pjlpc")]
 script = ExtResource("2_e0enq")
@@ -20,3 +23,10 @@ shape = SubResource("RectangleShape2D_xv300")
 [node name="InteractPrompt" parent="." index="2"]
 visible = true
 position = Vector2(0, -13)
+
+[node name="ReadableArea" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReadableArea" index="0"]
+shape = SubResource("CircleShape2D_yhho1")
+
+[connection signal="body_exited" from="ReadableArea" to="." method="_on_readable_area_body_exited"]

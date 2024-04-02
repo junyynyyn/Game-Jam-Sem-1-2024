@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1va4jp6ouvxm"]
+
+[ext_resource type="Script" path="res://Scenes/Minigames/Timing Match/TimingMatch.gd" id="1_jivyy"]
+[ext_resource type="Texture2D" uid="uid://blkiq48j8mffu" path="res://assets/kenney_ui-pack/PNG/grey_button00.png" id="1_mv7c5"]
+[ext_resource type="Texture2D" uid="uid://dtdcix0nqf3cw" path="res://assets/kenney_ui-pack/PNG/green_button00.png" id="2_m4obk"]
+[ext_resource type="Texture2D" uid="uid://bp5ffxlup3puw" path="res://assets/kenney_ui-pack/PNG/green_sliderDown.png" id="4_tnupq"]
+[ext_resource type="Texture2D" uid="uid://dkom0hxflburk" path="res://assets/kenney_ui-pack/PNG/green_sliderUp.png" id="5_tfb7e"]
+
+[node name="TimingMatch" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jivyy")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_right = 190.0
+offset_bottom = 45.0
+texture_under = ExtResource("1_mv7c5")
+texture_progress = ExtResource("2_m4obk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="TargetMarker" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="TargetMarker"]
+position = Vector2(0, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_tnupq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="TargetMarker"]
+position = Vector2(0, 56)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_tfb7e")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
