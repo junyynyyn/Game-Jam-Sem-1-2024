@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=26 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_jsu8u"]
@@ -10,13 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://cbgpqcm3ohj88" path="res://Scenes/UI/countdown_timer.tscn" id="4_l4aym"]
 [ext_resource type="PackedScene" uid="uid://bcgqwy3f30d1c" path="res://Scenes/Interactables/document.tscn" id="9_nrrgc"]
 [ext_resource type="Texture2D" uid="uid://btcnfnria6m48" path="res://assets/asesprite/vault_door.png" id="9_ua0k1"]
+[ext_resource type="Texture2D" uid="uid://s7g5t3k7tev0" path="res://assets/asesprite/lockboxes_1.png" id="10_2g8cw"]
 [ext_resource type="PackedScene" uid="uid://bylexggh5e34i" path="res://Scenes/Interactables/Camera.tscn" id="10_8nqs8"]
 [ext_resource type="PackedScene" uid="uid://c37d1r50ryitx" path="res://Scenes/Interactables/chair.tscn" id="10_xfd2b"]
 [ext_resource type="PackedScene" uid="uid://dgsc3v58t57o2" path="res://Scenes/Interactables/locker_1.tscn" id="11_xp064"]
 [ext_resource type="PackedScene" uid="uid://doquehgem0lgg" path="res://Scenes/Interactables/locker_med.tscn" id="12_hqnya"]
+[ext_resource type="PackedScene" uid="uid://db8v8wf0ia11b" path="res://Scenes/Interactables/locker_tall.tscn" id="13_uabk2"]
+[ext_resource type="PackedScene" uid="uid://dq0ig7f5tx2ot" path="res://Scenes/Interactables/locker_wide.tscn" id="14_g02k6"]
 [ext_resource type="PackedScene" uid="uid://d1va4jp6ouvxm" path="res://Scenes/Minigames/Timing Match/TimingMatch.tscn" id="15_6ld6q"]
 [ext_resource type="Script" path="res://Scenes/Info_UI.gd" id="16_ai0ot"]
 [ext_resource type="PackedScene" uid="uid://bmhds3kpeoa8m" path="res://Scenes/UI/document_ui.tscn" id="16_oqbuu"]
+[ext_resource type="AudioStream" uid="uid://dqyv36udash3o" path="res://assets/locked_in.mp3" id="21_lqmlj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nu6ht"]
 texture = ExtResource("1_otou2")
@@ -73,56 +77,6 @@ layer_1/tile_data = PackedInt32Array(262141, 5, 2, 196605, 5, 2, 131069, 4, 0, 1
 
 [node name="Interactables" type="Node2D" parent="."]
 
-[node name="Lockers" type="Node2D" parent="Interactables"]
-
-[node name="Locker3" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(-174, -166)
-
-[node name="Locker2" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(-174, -152)
-
-[node name="Locker1" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(-174, -138)
-
-[node name="Locker4" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(49, -170)
-
-[node name="Locker5" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(49, -156)
-
-[node name="Locker6" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(49, -142)
-
-[node name="Locker7" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(144, -170)
-
-[node name="Locker8" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(144, -156)
-
-[node name="Locker9" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(144, -142)
-
-[node name="Locker10" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(-79, -168)
-
-[node name="Locker11" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(-79, -154)
-
-[node name="Locker12" parent="Interactables/Lockers" instance=ExtResource("11_xp064")]
-position = Vector2(-79, -140)
-
-[node name="LockerMed" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
-position = Vector2(-144, -146)
-
-[node name="LockerMed2" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
-position = Vector2(-112, -146)
-
-[node name="LockerMed3" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
-position = Vector2(82, -151)
-
-[node name="LockerMed4" parent="Interactables/Lockers" instance=ExtResource("12_hqnya")]
-position = Vector2(114, -151)
-
 [node name="Desk" parent="Interactables" instance=ExtResource("4_6qdp2")]
 position = Vector2(168, 10)
 
@@ -139,8 +93,86 @@ texture = ExtResource("9_ua0k1")
 [node name="Chair" parent="Interactables" instance=ExtResource("10_xfd2b")]
 position = Vector2(137, 7)
 
+[node name="Lockbox1" type="Node2D" parent="Interactables"]
+position = Vector2(-112, -149)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Lockbox1"]
+texture = ExtResource("10_2g8cw")
+
+[node name="Locker4" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
+position = Vector2(-51, -16)
+
+[node name="Locker3" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
+position = Vector2(-51, -3)
+
+[node name="Locker2" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
+position = Vector2(-51, 11)
+
+[node name="Locker" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
+position = Vector2(-51, 24)
+
+[node name="Locker5" parent="Interactables/Lockbox1" instance=ExtResource("11_xp064")]
+position = Vector2(9, -12)
+
+[node name="LockerMed" parent="Interactables/Lockbox1" instance=ExtResource("12_hqnya")]
+position = Vector2(-23, 2)
+
+[node name="LockerMed2" parent="Interactables/Lockbox1" instance=ExtResource("12_hqnya")]
+position = Vector2(9, 12)
+
+[node name="LockerTall3" parent="Interactables/Lockbox1" instance=ExtResource("13_uabk2")]
+position = Vector2(55, -3)
+
+[node name="LockerTall2" parent="Interactables/Lockbox1" instance=ExtResource("13_uabk2")]
+position = Vector2(42, -3)
+
+[node name="LockerTall" parent="Interactables/Lockbox1" instance=ExtResource("13_uabk2")]
+position = Vector2(29, -3)
+
+[node name="LockerWide" parent="Interactables/Lockbox1" instance=ExtResource("14_g02k6")]
+position = Vector2(42, 22)
+
+[node name="Lockbox2" type="Node2D" parent="Interactables"]
+position = Vector2(106, -149)
+
+[node name="Sprite2D" type="Sprite2D" parent="Interactables/Lockbox2"]
+texture = ExtResource("10_2g8cw")
+
+[node name="Locker4" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
+position = Vector2(-51, -16)
+
+[node name="Locker3" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
+position = Vector2(-51, -3)
+
+[node name="Locker2" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
+position = Vector2(-51, 11)
+
+[node name="Locker" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
+position = Vector2(-51, 24)
+
+[node name="Locker5" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
+position = Vector2(9, -12)
+
+[node name="LockerMed" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
+position = Vector2(-23, 2)
+
+[node name="LockerMed2" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
+position = Vector2(9, 12)
+
+[node name="LockerTall3" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
+position = Vector2(55, -3)
+
+[node name="LockerTall2" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
+position = Vector2(42, -3)
+
+[node name="LockerTall" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
+position = Vector2(29, -3)
+
+[node name="LockerWide" parent="Interactables/Lockbox2" instance=ExtResource("14_g02k6")]
+position = Vector2(42, 22)
+
 [node name="Player" parent="." instance=ExtResource("1_51ryb")]
-position = Vector2(-26, -23)
+position = Vector2(-2, -29)
 scale = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="."]
@@ -196,3 +228,7 @@ offset_bottom = 19.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_lqmlj")
+autoplay = true

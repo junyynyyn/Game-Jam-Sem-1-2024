@@ -4,7 +4,7 @@ extends Control
 
 var can_exit = false
 
-func _process(delta):
+func _process(_delta):
 	if (self.visible == true):
 		if (Input.is_action_just_pressed("interact") and can_exit):
 			self.visible = false

@@ -8,4 +8,4 @@ func _ready():
 	pass
 	
 func use():
-	print("Locker")
+	pass
