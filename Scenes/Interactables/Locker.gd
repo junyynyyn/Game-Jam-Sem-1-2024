@@ -4,4 +4,8 @@ class_name Locker extends Interactable
 @export var locker_name: String
 
 func use():
-	Globals.player.think(locker_name + " ... Locked")
+	if (InventoryGlobal.has_item("paperclip")):
+		Globals.minigames.start_timing_game(item)
+		InventoryGlobal.remove_item("paperclip")
+	else:
+		Globals.player.think(locker_name + " ... Locked")

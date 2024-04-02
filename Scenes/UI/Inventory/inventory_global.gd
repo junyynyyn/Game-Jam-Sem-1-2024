@@ -15,14 +15,14 @@ func isFull():
 	
 func add_item(item):
 	if (not isFull()): 
-		var new_item = item.duplicate()
-		
-		itemList.append(new_item)
-		inventoryUI.display_items()
-		return true
-	else:
-		return false
-
+		if (item):
+			var new_item = item.duplicate()
+			
+			itemList.append(new_item)
+			inventoryUI.display_items()
+			return true
+	return false
+	
 func has_item(item_name):
 	for item in itemList:
 		if (item.item_name == item_name):
