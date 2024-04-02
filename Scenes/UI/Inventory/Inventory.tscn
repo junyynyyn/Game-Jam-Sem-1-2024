@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwus1fhdb5876"]
+[gd_scene load_steps=7 format=3 uid="uid://bwus1fhdb5876"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Inventory/Inventory.gd" id="1_qikxd"]
 [ext_resource type="Script" path="res://Scenes/UI/Inventory/ItemSlot.gd" id="2_6sdhw"]
-[ext_resource type="Texture2D" uid="uid://cxu08knu7bjcb" path="res://assets/kenney_ui-pack/PNG/grey_box.png" id="3_53woc"]
+[ext_resource type="ButtonGroup" uid="uid://36jut8y76aie" path="res://Scenes/UI/Inventory/InventoryButtonGroup.tres" id="3_s2igu"]
+[ext_resource type="Texture2D" uid="uid://djbeaqitrw6un" path="res://assets/kenney_ui-pack/PNG/grey_button07.png" id="4_jc2v7"]
+[ext_resource type="Texture2D" uid="uid://cxis08u2q1aew" path="res://assets/kenney_ui-pack/PNG/blue_button07.png" id="5_wic6f"]
+[ext_resource type="Script" path="res://Scenes/UI/Inventory/TextureButton.gd" id="6_mu3j8"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -26,69 +29,84 @@ offset_top = 38.64
 offset_right = 256.08
 offset_bottom = 78.64
 
-[node name="ItemSlot" type="TextureRect" parent="Slots"]
+[node name="TextureButton" type="TextureButton" parent="Slots"]
 layout_mode = 2
-texture = ExtResource("3_53woc")
+toggle_mode = true
+button_group = ExtResource("3_s2igu")
+texture_normal = ExtResource("4_jc2v7")
+texture_pressed = ExtResource("5_wic6f")
+script = ExtResource("6_mu3j8")
+
+[node name="ItemSlot" type="TextureRect" parent="Slots/TextureButton"]
+layout_mode = 2
+offset_right = 49.0
+offset_bottom = 49.0
+mouse_filter = 2
 expand_mode = 2
 script = ExtResource("2_6sdhw")
 
-[node name="ItemSlot2" type="TextureRect" parent="Slots"]
+[node name="TextureButton2" type="TextureButton" parent="Slots"]
 layout_mode = 2
-texture = ExtResource("3_53woc")
+toggle_mode = true
+button_group = ExtResource("3_s2igu")
+texture_normal = ExtResource("4_jc2v7")
+texture_pressed = ExtResource("5_wic6f")
+script = ExtResource("6_mu3j8")
+
+[node name="ItemSlot" type="TextureRect" parent="Slots/TextureButton2"]
+layout_mode = 2
+offset_bottom = 49.0
+mouse_filter = 2
 expand_mode = 2
 script = ExtResource("2_6sdhw")
 
-[node name="ItemSlot3" type="TextureRect" parent="Slots"]
+[node name="TextureButton3" type="TextureButton" parent="Slots"]
 layout_mode = 2
-texture = ExtResource("3_53woc")
+toggle_mode = true
+button_group = ExtResource("3_s2igu")
+texture_normal = ExtResource("4_jc2v7")
+texture_pressed = ExtResource("5_wic6f")
+script = ExtResource("6_mu3j8")
+
+[node name="ItemSlot" type="TextureRect" parent="Slots/TextureButton3"]
+layout_mode = 2
+offset_bottom = 49.0
+mouse_filter = 2
 expand_mode = 2
 script = ExtResource("2_6sdhw")
 
-[node name="ItemSlot4" type="TextureRect" parent="Slots"]
+[node name="TextureButton4" type="TextureButton" parent="Slots"]
 layout_mode = 2
-texture = ExtResource("3_53woc")
+toggle_mode = true
+button_group = ExtResource("3_s2igu")
+texture_normal = ExtResource("4_jc2v7")
+texture_pressed = ExtResource("5_wic6f")
+script = ExtResource("6_mu3j8")
+
+[node name="ItemSlot" type="TextureRect" parent="Slots/TextureButton4"]
+layout_mode = 2
+offset_bottom = 49.0
+mouse_filter = 2
 expand_mode = 2
 script = ExtResource("2_6sdhw")
 
-[node name="ItemSlot5" type="TextureRect" parent="Slots"]
+[node name="TextureButton5" type="TextureButton" parent="Slots"]
 layout_mode = 2
-texture = ExtResource("3_53woc")
+toggle_mode = true
+button_group = ExtResource("3_s2igu")
+texture_normal = ExtResource("4_jc2v7")
+texture_pressed = ExtResource("5_wic6f")
+script = ExtResource("6_mu3j8")
+
+[node name="ItemSlot" type="TextureRect" parent="Slots/TextureButton5"]
+layout_mode = 2
+offset_bottom = 49.0
+mouse_filter = 2
 expand_mode = 2
 script = ExtResource("2_6sdhw")
 
-[node name="Slots2" type="HBoxContainer" parent="."]
-layout_mode = 2
-offset_left = 32.5
-offset_top = 32.5
-offset_right = 248.5
-offset_bottom = 72.5
-
-[node name="ItemSlot" type="TextureRect" parent="Slots2"]
-layout_mode = 2
-texture = ExtResource("3_53woc")
-expand_mode = 2
-script = ExtResource("2_6sdhw")
-
-[node name="ItemSlot2" type="TextureRect" parent="Slots2"]
-layout_mode = 2
-texture = ExtResource("3_53woc")
-expand_mode = 2
-script = ExtResource("2_6sdhw")
-
-[node name="ItemSlot3" type="TextureRect" parent="Slots2"]
-layout_mode = 2
-texture = ExtResource("3_53woc")
-expand_mode = 2
-script = ExtResource("2_6sdhw")
-
-[node name="ItemSlot4" type="TextureRect" parent="Slots2"]
-layout_mode = 2
-texture = ExtResource("3_53woc")
-expand_mode = 2
-script = ExtResource("2_6sdhw")
-
-[node name="ItemSlot5" type="TextureRect" parent="Slots2"]
-layout_mode = 2
-texture = ExtResource("3_53woc")
-expand_mode = 2
-script = ExtResource("2_6sdhw")
+[connection signal="pressed" from="Slots/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Slots/TextureButton2" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Slots/TextureButton3" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Slots/TextureButton4" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Slots/TextureButton5" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://c37d1r50ryitx"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_r7e7g"]
+[ext_resource type="Texture2D" uid="uid://llsrmctwua3d" path="res://assets/asesprite/chair.png" id="2_iaync"]
+[ext_resource type="Script" path="res://Scenes/Interactables/chair.gd" id="2_puea7"]
+[ext_resource type="PackedScene" uid="uid://87em22ii7lr0" path="res://Scenes/Items/Chair.tscn" id="4_oypv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4li45"]
+size = Vector2(18, 56)
+
+[node name="Chair" instance=ExtResource("1_r7e7g")]
+script = ExtResource("2_puea7")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_iaync")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_4li45")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(0, -40)
+
+[node name="Chair" parent="." index="3" instance=ExtResource("4_oypv7")]
+item_name = "chair"
+sprite = "res://assets/asesprite/chair.png"

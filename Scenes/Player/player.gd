@@ -9,7 +9,7 @@ func _ready():
 	Globals.player = self
 
 # Just movement code atm
-func _process(delta):
+func _process(_delta):
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (Vector2(input_dir.x, input_dir.y)).normalized()
 	
@@ -35,18 +35,24 @@ func _process(delta):
 				area.hide_interact_area()
 				if (not closest):
 					closest = area
-					closest_dist = abs(position - area.position)
+					closest_dist = get_distance_from_mouse(area.global_position)
 				else:
-					if (abs(position - area.position) < closest_dist):
+					if (get_distance_from_mouse(area.global_position) < closest_dist):
 						closest = area
-						closest_dist =  abs(position - area.position)
+						closest_dist = get_distance_from_mouse(area.global_position)
 		closest.show_interact_area()
 		if (Input.is_action_just_pressed("interact")):
 			closest.use()
+	
+	
+	# Using an object in inventory
+	if (Input.is_action_just_pressed("use")):
+		InventoryGlobal.use_selected_item()
+	
 	move_and_slide()
 
-func get_distance(position):
-	return self.position - position
+func get_distance_from_mouse(position):
+	return abs(get_global_mouse_position().distance_to(position))
 
 func think(message):
 	$ThoughtBubble/Label.text = message

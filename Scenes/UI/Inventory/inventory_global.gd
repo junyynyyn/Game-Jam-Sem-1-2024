@@ -15,7 +15,9 @@ func isFull():
 	
 func add_item(item):
 	if (not isFull()): 
-		itemList.append(item)
+		var new_item = item.duplicate()
+		
+		itemList.append(new_item)
 		inventoryUI.display_items()
 		return true
 	else:
@@ -36,3 +38,15 @@ func remove_item(item_name):
 			itemList.remove_at(num)
 			inventoryUI.display_items()
 			break
+
+func get_selected_item():
+	if len(itemList) >= (selected_slot + 1):
+		return itemList[selected_slot]
+	else:
+		return null
+		
+func use_selected_item():
+	if (get_selected_item()):
+		get_selected_item().use()
+		print("Test")
+		inventoryUI.display_items()

@@ -4,9 +4,6 @@ var slot_container
 
 func _ready():
 	slot_container = $Slots
-
-func _process(delta):
-	pass
 	
 func display_items():
 	var items = InventoryGlobal.get_items()
@@ -20,3 +17,9 @@ func display_items():
 	# Run display code
 	for child in slots:
 		child.display_item()
+
+func _on_texture_button_pressed():
+	for num in len(slot_container.get_children()):
+		if (slot_container.get_children()[num].button_pressed == true):
+			InventoryGlobal.selected_slot = num
+			break

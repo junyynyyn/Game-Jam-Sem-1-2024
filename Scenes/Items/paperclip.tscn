@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://nbfike0grov0"]
+[gd_scene load_steps=3 format=3 uid="uid://nbfike0grov0"]
 
 [ext_resource type="PackedScene" uid="uid://hjo2nmwxry5y" path="res://Scenes/Items/Item.tscn" id="1_v32al"]
+[ext_resource type="Script" path="res://Scenes/Items/paperclip.gd" id="2_ksa02"]
 
-[node name="ItemSprite" instance=ExtResource("1_v32al")]
-item_name = "Paperclip"
-sprite = "res://icon.svg"
+[node name="PaperClip" instance=ExtResource("1_v32al")]
+script = ExtResource("2_ksa02")
+item_name = "paperclip"
+sprite = "res://assets/asesprite/paper_clip.png"
