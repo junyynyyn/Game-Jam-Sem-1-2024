@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=40 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_jsu8u"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://dqyv36udash3o" path="res://assets/locked_in.mp3" id="21_lqmlj"]
 [ext_resource type="Script" path="res://Scenes/Minigames.gd" id="24_ibsuq"]
 [ext_resource type="PackedScene" uid="uid://dxc2vjc6wkrh7" path="res://Scenes/Interactables/power_box.tscn" id="27_hydix"]
+[ext_resource type="PackedScene" uid="uid://dyrufwpj0dlij" path="res://Scenes/Interactables/money_bag.tscn" id="30_3vtdh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m42uc"]
 texture = ExtResource("3_ofuaf")
@@ -253,8 +254,17 @@ locker_name = "B-W1"
 [node name="VaultDoor" parent="Interactables" instance=ExtResource("19_sosvb")]
 position = Vector2(0, -168)
 
+[node name="MoneyBag" parent="Interactables" instance=ExtResource("30_3vtdh")]
+position = Vector2(-148, 147)
+
+[node name="MoneyBag3" parent="Interactables" instance=ExtResource("30_3vtdh")]
+position = Vector2(-164, 163)
+
+[node name="MoneyBag2" parent="Interactables" instance=ExtResource("30_3vtdh")]
+position = Vector2(-114, 164)
+
 [node name="Player" parent="." instance=ExtResource("1_51ryb")]
-position = Vector2(-2, -29)
+position = Vector2(2, -3)
 scale = Vector2(2, 2)
 
 [node name="UI" type="CanvasLayer" parent="."]

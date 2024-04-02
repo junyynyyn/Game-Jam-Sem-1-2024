@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyrufwpj0dlij"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_w1ims"]
+[ext_resource type="Texture2D" uid="uid://dykkcoyevct51" path="res://assets/asesprite/money_bag_1_128.png" id="2_03hhl"]
+[ext_resource type="Script" path="res://Scenes/Interactables/money_bag.gd" id="2_cjaus"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4y2fn"]
+radius = 54.0023
+
+[node name="MoneyBag" instance=ExtResource("1_w1ims")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_cjaus")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_03hhl")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_4y2fn")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(5.96046e-08, -72.5)
+scale = Vector2(2, 2)
