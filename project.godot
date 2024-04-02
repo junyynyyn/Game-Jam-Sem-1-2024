@@ -29,6 +29,10 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0348.png"
 
+[dotnet]
+
+project/assembly_name="Game-jam-sem-1-2024"
+
 [input]
 
 interact={
