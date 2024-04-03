@@ -3,4 +3,4 @@ extends Interactable
 @onready var gold = $Item
 
 func use():
-	print("Gold Stack")
+	Globals.player.think("Valuable... but not useful in this situation")

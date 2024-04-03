@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwus1fhdb5876"]
+[gd_scene load_steps=8 format=3 uid="uid://bwus1fhdb5876"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Inventory/Inventory.gd" id="1_qikxd"]
 [ext_resource type="Script" path="res://Scenes/UI/Inventory/ItemSlot.gd" id="2_6sdhw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djbeaqitrw6un" path="res://assets/kenney_ui-pack/PNG/grey_button07.png" id="4_jc2v7"]
 [ext_resource type="Texture2D" uid="uid://cxis08u2q1aew" path="res://assets/kenney_ui-pack/PNG/blue_button07.png" id="5_wic6f"]
 [ext_resource type="Script" path="res://Scenes/UI/Inventory/TextureButton.gd" id="6_mu3j8"]
+[ext_resource type="AudioStream" uid="uid://dr0rfwdv68r6f" path="res://assets/kenney_casino-audio/Audio/cardPlace2.ogg" id="7_7kw6x"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -134,6 +135,9 @@ offset_bottom = 49.0
 mouse_filter = 2
 expand_mode = 2
 script = ExtResource("2_6sdhw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_7kw6x")
 
 [connection signal="pressed" from="Slots/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Slots/TextureButton2" to="." method="_on_texture_button_pressed"]

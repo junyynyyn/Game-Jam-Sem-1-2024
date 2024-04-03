@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcgqwy3f30d1c"]
+[gd_scene load_steps=7 format=3 uid="uid://bcgqwy3f30d1c"]
 
 [ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_pjlpc"]
 [ext_resource type="Texture2D" uid="uid://clg13jw6p58ls" path="res://assets/asesprite/document.png" id="2_22j04"]
 [ext_resource type="Script" path="res://Scenes/Interactables/document.gd" id="2_e0enq"]
+[ext_resource type="AudioStream" uid="uid://dva8d4a087bhc" path="res://assets/kenney_casino-audio/Audio/cardTakeOutPackage2.ogg" id="4_s86g4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv300"]
 size = Vector2(11, 8)
@@ -28,5 +29,8 @@ position = Vector2(0, -13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ReadableArea" index="0"]
 shape = SubResource("CircleShape2D_yhho1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+stream = ExtResource("4_s86g4")
 
 [connection signal="body_exited" from="ReadableArea" to="." method="_on_readable_area_body_exited"]
