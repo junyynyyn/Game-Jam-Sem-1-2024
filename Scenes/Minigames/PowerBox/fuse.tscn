@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv7obuiyglnux"]
+
+[ext_resource type="Script" path="res://Scenes/Minigames/PowerBox/Fuse.gd" id="1_cls15"]
+[ext_resource type="Texture2D" uid="uid://da3ad7x3p03s" path="res://assets/asesprite/fuse_green.png" id="2_ffs6c"]
+[ext_resource type="Texture2D" uid="uid://degnk5ljndp0m" path="res://assets/asesprite/fuse_red.png" id="3_jh1dq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g8c8e"]
+radius = 12.0
+
+[node name="Fuse" type="Node2D"]
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_cls15")
+fuse_green = ExtResource("2_ffs6c")
+fuse_red = ExtResource("3_jh1dq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g8c8e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_jh1dq")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
