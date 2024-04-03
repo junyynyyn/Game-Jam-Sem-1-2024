@@ -2,11 +2,15 @@ extends CharacterBody2D
 
 @export var SPEED : float = 150.0
 var interact_area
+@onready var gun = $StarterItems/Gun
+@onready var bullet = $StarterItems/Bullet
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	interact_area = $InteractArea
 	Globals.player = self
+	InventoryGlobal.add_item(gun)
+	InventoryGlobal.add_item(bullet)
 
 # Just movement code atm
 func _process(_delta):
@@ -42,11 +46,18 @@ func _process(_delta):
 						closest_dist = get_distance_from_mouse(area.global_position)
 		closest.show_interact_area()
 		if (Input.is_action_just_pressed("interact")):
-			closest.use()
+			if ($InteractCooldown.is_stopped()):
+				closest.use()
+				$InteractCooldown.start()
 	
 	# Using an object in inventory
 	if (Input.is_action_just_pressed("use")):
 		InventoryGlobal.use_selected_item()
+		
+	if (Input.is_action_just_pressed("reset")):
+		InventoryGlobal.clear()
+		Globals.reset()
+		get_tree().reload_current_scene()
 	
 	move_and_slide()
 

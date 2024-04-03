@@ -152,8 +152,4 @@ script = ExtResource("17_2u184")
 item_name = "bullet"
 sprite = "res://assets/asesprite/bullet.png"
 
-[node name="InteractCooldown" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
 [connection signal="timeout" from="ThoughtBubble/MessageTimer" to="." method="_on_timer_timeout"]

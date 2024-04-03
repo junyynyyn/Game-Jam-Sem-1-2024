@@ -1,13 +1,10 @@
 extends Node
 
-var max_capacity = 5
+var max_capacity = 7
 var selected_slot = 0
 
 var itemList = []
 var inventoryUI
-
-func _ready():
-	inventoryUI = get_tree().root.get_node("/root/Main/UI/InventoryUI")
 
 # Helper functions for inventory
 func isFull(): 
@@ -48,5 +45,8 @@ func get_selected_item():
 func use_selected_item():
 	if (get_selected_item()):
 		get_selected_item().use()
-		print("Test")
 		inventoryUI.display_items()
+
+func clear():
+	itemList = []
+	inventoryUI.display_items()

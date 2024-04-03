@@ -105,8 +105,40 @@ mouse_filter = 2
 expand_mode = 2
 script = ExtResource("2_6sdhw")
 
+[node name="TextureButton6" type="TextureButton" parent="Slots"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_s2igu")
+texture_normal = ExtResource("4_jc2v7")
+texture_pressed = ExtResource("5_wic6f")
+script = ExtResource("6_mu3j8")
+
+[node name="ItemSlot" type="TextureRect" parent="Slots/TextureButton6"]
+layout_mode = 2
+offset_bottom = 49.0
+mouse_filter = 2
+expand_mode = 2
+script = ExtResource("2_6sdhw")
+
+[node name="TextureButton7" type="TextureButton" parent="Slots"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_s2igu")
+texture_normal = ExtResource("4_jc2v7")
+texture_pressed = ExtResource("5_wic6f")
+script = ExtResource("6_mu3j8")
+
+[node name="ItemSlot" type="TextureRect" parent="Slots/TextureButton7"]
+layout_mode = 2
+offset_bottom = 49.0
+mouse_filter = 2
+expand_mode = 2
+script = ExtResource("2_6sdhw")
+
 [connection signal="pressed" from="Slots/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Slots/TextureButton2" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Slots/TextureButton3" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Slots/TextureButton4" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Slots/TextureButton5" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Slots/TextureButton6" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Slots/TextureButton7" to="." method="_on_texture_button_pressed"]

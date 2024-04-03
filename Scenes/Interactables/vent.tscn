@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://df0g6rvp0fwco"]
+[gd_scene load_steps=10 format=3 uid="uid://df0g6rvp0fwco"]
 
 [ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_bh64t"]
 [ext_resource type="Texture2D" uid="uid://bgaxuqh5y1gbe" path="res://assets/asesprite/vent_1.png" id="2_3vlho"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://42jr3onargqd" path="res://assets/asesprite/vent_2.png" id="3_v815h"]
 [ext_resource type="Texture2D" uid="uid://bs4j7eusqu3np" path="res://assets/asesprite/vent_4.png" id="4_b2tkv"]
 [ext_resource type="Texture2D" uid="uid://b1e7ectvxi86e" path="res://assets/asesprite/vent_3.png" id="5_2wyml"]
+[ext_resource type="Texture2D" uid="uid://3tfgajyeq400" path="res://assets/light.jpg" id="7_w5efw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0qvl"]
 size = Vector2(229, 118)
@@ -64,3 +65,9 @@ scale = Vector2(5, 5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_fxl63")
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
+color = Color(0.666667, 0.0901961, 0.0470588, 1)
+energy = 2.0
+texture = ExtResource("7_w5efw")
+texture_scale = 0.8

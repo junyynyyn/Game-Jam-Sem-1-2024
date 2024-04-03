@@ -7,6 +7,11 @@ var info_ui
 var minigames
 
 var lasers_disabled = false
+var camera_disabled = false
 
 func stop_game():
 	get_tree().quit()
+
+func reset():
+	lasers_disabled = false
+	camera_disabled = false

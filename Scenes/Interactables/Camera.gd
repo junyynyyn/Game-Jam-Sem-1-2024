@@ -1,9 +1,15 @@
 extends Interactable
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	super()
-	pass
+var active = true
 	
 func use():
-	pass
+	if (active):
+		if (InventoryGlobal.get_selected_item()):
+			print(InventoryGlobal.get_selected_item().item_name)
+			if (InventoryGlobal.get_selected_item().item_name == "gun" and InventoryGlobal.has_item("bullet")):
+				active = false
+				InventoryGlobal.remove_item("bullet")
+				$PointLight2D.hide()
+				return
+				
+		Globals.player.think("They’re watching my every move from this...I should get rid of it, but how?")

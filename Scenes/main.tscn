@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dhxlbsqpptays"]
+[gd_scene load_steps=45 format=3 uid="uid://dhxlbsqpptays"]
 
 [ext_resource type="PackedScene" uid="uid://crgbhexf70b1f" path="res://Scenes/Player/player.tscn" id="1_51ryb"]
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_jsu8u"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bylexggh5e34i" path="res://Scenes/Interactables/Camera.tscn" id="10_8nqs8"]
 [ext_resource type="PackedScene" uid="uid://c37d1r50ryitx" path="res://Scenes/Interactables/chair.tscn" id="10_xfd2b"]
 [ext_resource type="PackedScene" uid="uid://nbfike0grov0" path="res://Scenes/Items/paperclip.tscn" id="10_ytatd"]
+[ext_resource type="Script" path="res://Scenes/Items/Item.gd" id="11_l8lfc"]
 [ext_resource type="PackedScene" uid="uid://dgsc3v58t57o2" path="res://Scenes/Interactables/locker_1.tscn" id="11_xp064"]
 [ext_resource type="PackedScene" uid="uid://doquehgem0lgg" path="res://Scenes/Interactables/locker_med.tscn" id="12_hqnya"]
 [ext_resource type="PackedScene" uid="uid://db8v8wf0ia11b" path="res://Scenes/Interactables/locker_tall.tscn" id="13_uabk2"]
@@ -140,6 +141,73 @@ layer_2/tile_data = PackedInt32Array(458745, 18, 0, 458746, 18, 0, 458747, 18, 0
 
 [node name="PaperClip" parent="Items" instance=ExtResource("10_ytatd")]
 
+[node name="Battery" type="Node" parent="Items"]
+script = ExtResource("11_l8lfc")
+item_name = "battery"
+
+[node name="Screwdriver" type="Node" parent="Items"]
+script = ExtResource("11_l8lfc")
+item_name = "screwdriver"
+sprite = "res://assets/asesprite/screwdriver.png"
+
+[node name="ElectricScrewdriver" type="Node" parent="Items"]
+script = ExtResource("11_l8lfc")
+item_name = "electric_screwdriver"
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="InventoryUI" parent="UI" instance=ExtResource("2_xm0rl")]
+
+[node name="CountdownTimer" parent="UI" instance=ExtResource("4_l4aym")]
+
+[node name="Minigames" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("24_ibsuq")
+
+[node name="TimingMatch" parent="UI/Minigames" instance=ExtResource("15_6ld6q")]
+process_mode = 3
+visible = false
+layout_mode = 1
+offset_left = -76.0
+offset_top = 71.0
+offset_right = -76.0
+offset_bottom = 71.0
+
+[node name="Info_UI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_ai0ot")
+
+[node name="Document_UI" parent="UI/Info_UI" instance=ExtResource("16_oqbuu")]
+visible = false
+layout_mode = 1
+offset_left = 10.0
+offset_top = 19.0
+offset_right = 10.0
+offset_bottom = 19.0
+
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Desk" parent="Interactables" instance=ExtResource("4_6qdp2")]
@@ -236,9 +304,8 @@ locker_name = "B-S4"
 position = Vector2(9, -12)
 locker_name = "B-S5"
 
-[node name="LockerMed" parent="Interactables/Lockbox2" node_paths=PackedStringArray("item") instance=ExtResource("12_hqnya")]
+[node name="LockerMed" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
 position = Vector2(-23, 2)
-item = NodePath("../../../Items/PaperClip")
 locker_name = "B-L1"
 
 [node name="LockerMed2" parent="Interactables/Lockbox2" instance=ExtResource("12_hqnya")]
@@ -249,8 +316,9 @@ locker_name = "B-L2"
 position = Vector2(55, -3)
 locker_name = "B-T3"
 
-[node name="LockerTall2" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
+[node name="LockerTall2" parent="Interactables/Lockbox2" node_paths=PackedStringArray("item") instance=ExtResource("13_uabk2")]
 position = Vector2(42, -3)
+item = NodePath("../../../Items/Screwdriver")
 locker_name = "B-T2"
 
 [node name="LockerTall" parent="Interactables/Lockbox2" instance=ExtResource("13_uabk2")]
@@ -294,60 +362,6 @@ scale = Vector2(0.5, 0.5)
 [node name="GoldShelf" parent="InteractablesForeground" instance=ExtResource("33_jjg83")]
 position = Vector2(65, 77)
 scale = Vector2(0.5, 0.5)
-
-[node name="UI" type="CanvasLayer" parent="."]
-process_mode = 3
-
-[node name="InventoryUI" parent="UI" instance=ExtResource("2_xm0rl")]
-
-[node name="CountdownTimer" parent="UI" instance=ExtResource("4_l4aym")]
-
-[node name="Minigames" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("24_ibsuq")
-
-[node name="TimingMatch" parent="UI/Minigames" instance=ExtResource("15_6ld6q")]
-process_mode = 3
-visible = false
-layout_mode = 1
-offset_left = -76.0
-offset_top = 71.0
-offset_right = -76.0
-offset_bottom = 71.0
-
-[node name="Info_UI" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("16_ai0ot")
-
-[node name="Document_UI" parent="UI/Info_UI" instance=ExtResource("16_oqbuu")]
-visible = false
-layout_mode = 1
-offset_left = 10.0
-offset_top = 19.0
-offset_right = 10.0
-offset_bottom = 19.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.156863, 0.156863, 0.156863, 1)

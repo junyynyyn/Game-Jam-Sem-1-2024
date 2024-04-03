@@ -8,5 +8,6 @@ func _ready():
 	pass
 
 func use():
-	InventoryGlobal.add_item(chair_item)
-	queue_free()
+	pass
+	#InventoryGlobal.add_item(chair_item)
+	#queue_free()

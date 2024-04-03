@@ -1,9 +1,9 @@
 extends Control
 
-var slot_container
+@onready var slot_container = $Slots
 
 func _ready():
-	slot_container = $Slots
+	InventoryGlobal.inventoryUI = self
 	
 func display_items():
 	var items = InventoryGlobal.get_items()

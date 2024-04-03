@@ -8,4 +8,4 @@ func _ready():
 	pass # Replace with function body.
 
 func use():
-	Globals.player.think("A desk")
+	Globals.player.think("A desk... could be helpful to assemble something")
