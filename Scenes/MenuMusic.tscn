@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4jka0vjwdaxk"]
+
+[ext_resource type="AudioStream" uid="uid://ck57w3fg5ykt6" path="res://assets/start_screen.mp3" id="1_iwobc"]
+[ext_resource type="Script" path="res://Scenes/MenuMusic.gd" id="1_p4fta"]
+
+[node name="MenuMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_iwobc")
+autoplay = true
+script = ExtResource("1_p4fta")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
