@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh4h0a0rwpeuc"]
+[gd_scene load_steps=5 format=3 uid="uid://7x51ykbetvuu"]
 
 [ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_oeamm"]
 [ext_resource type="Texture2D" uid="uid://btcnfnria6m48" path="res://assets/asesprite/vault_door.png" id="2_wbars"]
@@ -8,6 +8,7 @@
 radius = 29.0172
 
 [node name="VaultDoor" instance=ExtResource("1_oeamm")]
+scale = Vector2(1.05, 1.05)
 script = ExtResource("2_xlfy2")
 
 [node name="Sprite2D" parent="." index="0"]
