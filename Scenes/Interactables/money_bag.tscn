@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyrufwpj0dlij"]
+[gd_scene load_steps=5 format=3 uid="uid://do5yg3fkl4xio"]
 
 [ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_w1ims"]
 [ext_resource type="Texture2D" uid="uid://dykkcoyevct51" path="res://assets/asesprite/money_bag_1_128.png" id="2_03hhl"]
@@ -18,6 +18,5 @@ texture = ExtResource("2_03hhl")
 shape = SubResource("CircleShape2D_4y2fn")
 
 [node name="InteractPrompt" parent="." index="2"]
-visible = true
 position = Vector2(5.96046e-08, -72.5)
 scale = Vector2(2, 2)
