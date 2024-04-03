@@ -17,6 +17,8 @@ func display_items():
 	# Run display code
 	for child in slots:
 		child.display_item()
+	
+	$AudioStreamPlayer.play()
 
 func _on_texture_button_pressed():
 	for num in len(slot_container.get_children()):

@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://dukap55dh0ees"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenu/InfoMenu.gd" id="1_0bu4l"]
+[ext_resource type="FontFile" uid="uid://cqh2qdwhdcwp3" path="res://assets/kenney_ui-pack/Font/kenvector_future.ttf" id="2_0sei6"]
+[ext_resource type="Texture2D" uid="uid://bf7646do0fsva" path="res://assets/asesprite/vault_door_wall_concept.png" id="3_jg8g3"]
+[ext_resource type="Texture2D" uid="uid://blkiq48j8mffu" path="res://assets/kenney_ui-pack/PNG/grey_button00.png" id="4_m6gvg"]
+
+[sub_resource type="Theme" id="Theme_6p3e2"]
+default_font = ExtResource("2_0sei6")
+default_font_size = 60
+
+[sub_resource type="Theme" id="Theme_ofgy5"]
+
+[sub_resource type="Theme" id="Theme_loa0h"]
+default_font = ExtResource("2_0sei6")
+
+[node name="InfoMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0bu4l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.0
+offset_top = -107.0
+offset_right = 3.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6p3e2")
+text = "TSIEH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 9.0
+offset_top = -118.0
+offset_right = 229.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6p3e2")
+theme_override_font_sizes/font_size = 12
+text = "Escape the vault before the guards break in"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Label2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = 24.0
+offset_right = 109.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6p3e2")
+theme_override_font_sizes/font_size = 12
+text = "Controls:
+Movement: WASD
+Interact: E"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VaultDoorWallConcept" type="Sprite2D" parent="."]
+position = Vector2(135, 183)
+texture = ExtResource("3_jg8g3")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 194.0
+offset_right = 449.0
+offset_bottom = 239.0
+theme = SubResource("Theme_ofgy5")
+texture_normal = ExtResource("4_m6gvg")
+
+[node name="Label" type="Label" parent="QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -11.5
+offset_right = 44.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_loa0h")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Back to Menu"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -25,6 +25,7 @@ func _process(_delta):
 			if (progress_bar.value > target_val - THRESHOLD and progress_bar.value < target_val + THRESHOLD):
 				get_tree().paused = false
 				completed.emit()
+				$AudioStreamPlayer.play()
 				end()
 			else:
 				cooldown = true

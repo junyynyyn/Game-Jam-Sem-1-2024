@@ -22,6 +22,7 @@ signal switched(x_index, y_index)
 func _on_button_pressed():
 	switch_color()
 	switched.emit(x_index, y_index)
+	$AudioStreamPlayer.play()
 
 func switch_color():
 	if status:

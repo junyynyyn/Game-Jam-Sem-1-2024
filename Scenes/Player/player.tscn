@@ -106,6 +106,7 @@ shape = SubResource("CircleShape2D_k2gs5")
 
 [node name="ThoughtBubble" type="Node2D" parent="."]
 visible = false
+z_index = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ThoughtBubble"]
 modulate = Color(0.247059, 0.247059, 0.247059, 0.470588)
@@ -126,6 +127,8 @@ autowrap_mode = 3
 [node name="MessageTimer" type="Timer" parent="ThoughtBubble"]
 wait_time = 4.0
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(3, 1)

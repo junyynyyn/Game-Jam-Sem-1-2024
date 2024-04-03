@@ -152,9 +152,10 @@ script = ExtResource("11_l8lfc")
 item_name = "screwdriver"
 sprite = "res://assets/asesprite/screwdriver.png"
 
-[node name="ElectricScrewdriver" type="Node" parent="Items"]
+[node name="Talisman" type="Node" parent="Items"]
 script = ExtResource("11_l8lfc")
-item_name = "electric_screwdriver"
+item_name = "talisman"
+sprite = "res://assets/asesprite/talisman2.png"
 
 [node name="UI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -224,7 +225,7 @@ position = Vector2(180, -185)
 position = Vector2(137, 7)
 
 [node name="PowerBox" parent="Interactables" instance=ExtResource("27_hydix")]
-position = Vector2(-192, -48)
+position = Vector2(-185, -47)
 
 [node name="Vent" parent="Interactables" instance=ExtResource("34_8rsgo")]
 position = Vector2(-177, -144)
@@ -297,8 +298,9 @@ locker_name = "B-S2"
 position = Vector2(-51, 11)
 locker_name = "B-S3"
 
-[node name="Locker" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]
+[node name="Locker" parent="Interactables/Lockbox2" node_paths=PackedStringArray("item") instance=ExtResource("11_xp064")]
 position = Vector2(-51, 24)
+item = NodePath("../../../Items/Talisman")
 locker_name = "B-S4"
 
 [node name="Locker5" parent="Interactables/Lockbox2" instance=ExtResource("11_xp064")]

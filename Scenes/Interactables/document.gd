@@ -5,6 +5,7 @@ func _ready():
 	super()
 
 func use():
+	$AudioStreamPlayer.play()
 	Globals.info_ui.show_document_ui()
 
 func _on_readable_area_body_exited(body):

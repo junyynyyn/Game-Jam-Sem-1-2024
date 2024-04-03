@@ -6,4 +6,3 @@ func use():
 			Globals.minigames.start_powerbox()
 			return
 	Globals.player.think("I need a tool to open this with")
-	

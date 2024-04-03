@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5j7b0whluqm4"]
 
 [ext_resource type="Texture2D" uid="uid://b7u5tdu1rhewe" path="res://icon.svg" id="1_8oc04"]
-[ext_resource type="Texture2D" uid="uid://bqb14km6tlbb2" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (Black)/tile_0087.png" id="2_hrqn0"]
+[ext_resource type="Texture2D" uid="uid://betqc0kte1vmm" path="res://assets/kenney_1-bit-input-prompts-pixel-16/Tiles (White)/tile_0087.png" id="2_xiegi"]
 
 [node name="InteractableArea" type="Area2D" groups=["Interactable"]]
 collision_layer = 4
@@ -14,5 +14,6 @@ position = Vector2(-1, -1.5)
 
 [node name="InteractPrompt" type="Sprite2D" parent="."]
 visible = false
+z_index = 1
 position = Vector2(1, -120)
-texture = ExtResource("2_hrqn0")
+texture = ExtResource("2_xiegi")

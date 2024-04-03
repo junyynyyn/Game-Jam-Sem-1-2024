@@ -9,4 +9,4 @@ func _ready():
 	$Sprite2D.texture = load(sprites.pick_random())
 
 func use():
-	print("Moneyy bag")
+	Globals.player.think("These are filled with cash… this one looks big enough to fit even me!")
