@@ -12,11 +12,16 @@ signal switched(x_index, y_index)
 
 @onready var sprite = $Sprite2D
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		switch_color()
-		switched.emit(x_index, y_index)
-		#print("switching " + str(x_index) + ", " + str(y_index))
+#func _on_area_2d_input_event(viewport, event, shape_idx):
+	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		#switch_color()
+		#switched.emit(x_index, y_index)
+		##print("switching " + str(x_index) + ", " + str(y_index))
+
+
+func _on_button_pressed():
+	switch_color()
+	switched.emit(x_index, y_index)
 
 func switch_color():
 	if status:

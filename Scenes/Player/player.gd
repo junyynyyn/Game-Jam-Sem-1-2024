@@ -7,6 +7,7 @@ var interact_area
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	InventoryGlobal.clear()
 	interact_area = $InteractArea
 	Globals.player = self
 	InventoryGlobal.add_item(gun)

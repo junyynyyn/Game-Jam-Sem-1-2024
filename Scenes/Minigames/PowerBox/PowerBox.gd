@@ -48,7 +48,7 @@ func _ready():
 		
 		fuse_rows.append(row)
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func toggle_button(x, y): # fuse at x and y already switched colors (see area input event in Fuse)
@@ -67,8 +67,6 @@ func is_completed() -> bool:
 				return false
 	return true
 
-# X button
-func _on_area_2d_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		powerbox_leave.emit()
-		print_debug("here")
+func _on_button_pressed():
+	powerbox_leave.emit()
+	print_debug("here")

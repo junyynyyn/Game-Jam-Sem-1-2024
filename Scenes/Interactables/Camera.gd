@@ -7,7 +7,7 @@ func use():
 		if (InventoryGlobal.get_selected_item()):
 			print(InventoryGlobal.get_selected_item().item_name)
 			if (InventoryGlobal.get_selected_item().item_name == "gun" and InventoryGlobal.has_item("bullet")):
-				active = false
+				Globals.camera_disabled = true
 				InventoryGlobal.remove_item("bullet")
 				$PointLight2D.hide()
 				return

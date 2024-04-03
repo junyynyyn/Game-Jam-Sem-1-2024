@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dq0ig7f5tx2ot" path="res://Scenes/Interactables/locker_wide.tscn" id="14_g02k6"]
 [ext_resource type="PackedScene" uid="uid://d1va4jp6ouvxm" path="res://Scenes/Minigames/Timing Match/TimingMatch.tscn" id="15_6ld6q"]
 [ext_resource type="Script" path="res://Scenes/Info_UI.gd" id="16_ai0ot"]
+[ext_resource type="PackedScene" uid="uid://cuilqqkfhvwdg" path="res://Scenes/Minigames/PowerBox/power_box.tscn" id="16_ngiu4"]
 [ext_resource type="PackedScene" uid="uid://bmhds3kpeoa8m" path="res://Scenes/UI/document_ui.tscn" id="16_oqbuu"]
 [ext_resource type="PackedScene" uid="uid://7x51ykbetvuu" path="res://Scenes/Interactables/vault_door.tscn" id="19_sosvb"]
 [ext_resource type="AudioStream" uid="uid://dqyv36udash3o" path="res://assets/locked_in.mp3" id="21_lqmlj"]
@@ -159,6 +160,8 @@ item_name = "electric_screwdriver"
 process_mode = 3
 
 [node name="InventoryUI" parent="UI" instance=ExtResource("2_xm0rl")]
+offset_right = -198.0
+offset_bottom = -110.0
 
 [node name="CountdownTimer" parent="UI" instance=ExtResource("4_l4aym")]
 
@@ -169,10 +172,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("24_ibsuq")
@@ -186,6 +185,11 @@ offset_top = 71.0
 offset_right = -76.0
 offset_bottom = 71.0
 
+[node name="PowerBox" parent="UI/Minigames" instance=ExtResource("16_ngiu4")]
+visible = false
+position = Vector2(-144, -79)
+scale = Vector2(0.7, 0.7)
+
 [node name="Info_UI" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 8
@@ -193,10 +197,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("16_ai0ot")
@@ -206,8 +206,8 @@ visible = false
 layout_mode = 1
 offset_left = 10.0
 offset_top = 19.0
-offset_right = 10.0
-offset_bottom = 19.0
+offset_right = -30.0
+offset_bottom = -21.0
 
 [node name="Interactables" type="Node2D" parent="."]
 
@@ -373,3 +373,5 @@ stream = ExtResource("21_lqmlj")
 autoplay = true
 
 [connection signal="completed" from="UI/Minigames/TimingMatch" to="UI/Minigames" method="_on_timing_match_completed"]
+[connection signal="powerbox_complete" from="UI/Minigames/PowerBox" to="UI/Minigames" method="_on_power_box_powerbox_complete"]
+[connection signal="powerbox_leave" from="UI/Minigames/PowerBox" to="UI/Minigames" method="_on_power_box_powerbox_leave"]
