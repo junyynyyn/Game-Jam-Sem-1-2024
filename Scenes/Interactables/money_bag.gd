@@ -6,6 +6,7 @@ var sprites = [
 ]
 
 func _ready():
+	super()
 	$Sprite2D.texture = load(sprites.pick_random())
 
 func use():
