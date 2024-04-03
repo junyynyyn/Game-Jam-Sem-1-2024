@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn5ku61v8gt8f"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_8e5nb"]
+[ext_resource type="Script" path="res://Scenes/Interactables/gold_stack.gd" id="2_b0ut6"]
+[ext_resource type="Texture2D" uid="uid://6nuvqrcheduw" path="res://assets/asesprite/gold_pile_1_64.png" id="2_lh6l4"]
+[ext_resource type="Script" path="res://Scenes/Items/Item.gd" id="4_x5gu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6r3xs"]
+size = Vector2(45, 45)
+
+[node name="GoldStack" instance=ExtResource("1_8e5nb")]
+script = ExtResource("2_b0ut6")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_lh6l4")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_6r3xs")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(0, -43)
+
+[node name="Item" type="Node" parent="." index="3"]
+script = ExtResource("4_x5gu6")
+item_name = "gold bar"
+sprite = "res://assets/asesprite/gold_pile_1_64.png"

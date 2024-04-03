@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dug6wuri4jkcn"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_mecia"]
+[ext_resource type="Texture2D" uid="uid://b46a0gebqqf74" path="res://assets/asesprite/gold_bar_shelf_128.png" id="2_46cg4"]
+[ext_resource type="Script" path="res://Scenes/Interactables/gold_shelf.gd" id="2_g63ut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clxog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sq2vl"]
+size = Vector2(123, 51)
+
+[node name="GoldShelf" instance=ExtResource("1_mecia")]
+collision_layer = 1
+script = ExtResource("2_g63ut")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_46cg4")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_clxog")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(0, -69)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(-0.5, 36.5)
+shape = SubResource("RectangleShape2D_sq2vl")

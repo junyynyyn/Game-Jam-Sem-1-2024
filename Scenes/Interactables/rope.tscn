@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0851g4bebjnp"]
+
+[ext_resource type="PackedScene" uid="uid://c5j7b0whluqm4" path="res://Scenes/Interactables/Interactable.tscn" id="1_dxt8n"]
+[ext_resource type="Texture2D" uid="uid://dn8m85626rji6" path="res://assets/asesprite/rope_64x64.png" id="2_bth8h"]
+[ext_resource type="Script" path="res://Scenes/Interactables/rope.gd" id="2_seaor"]
+[ext_resource type="Script" path="res://Scenes/Items/Item.gd" id="2_vkrvy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lmnwj"]
+radius = 30.0
+
+[node name="Rope" instance=ExtResource("1_dxt8n")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_seaor")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_bth8h")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_lmnwj")
+
+[node name="InteractPrompt" parent="." index="2"]
+visible = true
+position = Vector2(2, -52)
+scale = Vector2(2, 2)
+
+[node name="Item" type="Node" parent="." index="3"]
+script = ExtResource("2_vkrvy")
+item_name = "rope"
+sprite = "res://assets/asesprite/rope_64x64.png"
