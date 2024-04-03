@@ -2,7 +2,7 @@ extends Interactable
 
 var opened = false
 
-func _process(delta):
+func _process(_delta):
 	if (Globals.lasers_disabled and opened):
 		$AnimatedSprite2D.play("full_disabled")
 		$PointLight2D.hide()
