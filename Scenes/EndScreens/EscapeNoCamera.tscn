@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbk705wvr65xj"]
+
+[ext_resource type="Script" path="res://Scenes/EndScreens/Escape.gd" id="1_ij84o"]
+[ext_resource type="Script" path="res://Scenes/EndScreens/Escape_Reset.gd" id="1_q7xgb"]
+[ext_resource type="Texture2D" uid="uid://dygpfxclnb51j" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0053.png" id="2_30py7"]
+[ext_resource type="Texture2D" uid="uid://dswx8pxdn3u4b" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0377.png" id="2_dk1ax"]
+[ext_resource type="Texture2D" uid="uid://qyngwgpdgila" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0026.png" id="3_2qi0q"]
+[ext_resource type="Texture2D" uid="uid://5r64rk82ue0l" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0404.png" id="3_ksph0"]
+[ext_resource type="Texture2D" uid="uid://dv0xkx6tesa0h" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0080.png" id="4_h8gum"]
+[ext_resource type="Texture2D" uid="uid://c6ic5xl8hvqhu" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0350.png" id="4_unh15"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jubs2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2qi0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_30py7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h8gum")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dty86"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5st2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dk1ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ksph0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_unh15")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_q7xgb")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-30, 200)
+script = ExtResource("1_ij84o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_jubs2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_dty86")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(-277, 201)
+script = ExtResource("1_ij84o")
+SPEED = 220
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2"]
+sprite_frames = SubResource("SpriteFrames_n5st2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+shape = SubResource("RectangleShape2D_dty86")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = 84.0
+offset_right = 303.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You got caught by the guards on your way out!
+Press R to restart"
+horizontal_alignment = 1

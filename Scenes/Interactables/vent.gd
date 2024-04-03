@@ -26,4 +26,7 @@ func use():
 	elif (not opened):
 		Globals.player.think("I probably need something to unscrew these with…")
 	else:
-		print("Game Won!")
+		if (Globals.camera_disabled):
+			Globals.play_ending(0)
+		else:
+			Globals.play_ending(1)

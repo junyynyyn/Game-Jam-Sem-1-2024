@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxulogpbcasbs"]
+
+[ext_resource type="Script" path="res://Scenes/EndScreens/Escape.gd" id="1_0r6x6"]
+[ext_resource type="Texture2D" uid="uid://dygpfxclnb51j" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0053.png" id="1_j5gyh"]
+[ext_resource type="Script" path="res://Scenes/EndScreens/Escape_Reset.gd" id="1_jjgx6"]
+[ext_resource type="Texture2D" uid="uid://qyngwgpdgila" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0026.png" id="2_8n8pn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5st2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j5gyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8n8pn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_j5gyh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dty86"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jjgx6")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-30, 200)
+script = ExtResource("1_0r6x6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_n5st2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_dty86")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = 84.0
+offset_right = 303.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Escaped in time!
+Press R to restart"
+horizontal_alignment = 1

@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://jrng0sqs0u2m"]
+
+[ext_resource type="Script" path="res://Scenes/EndScreens/Escape_Reset.gd" id="1_tue6d"]
+[ext_resource type="Texture2D" uid="uid://dygpfxclnb51j" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0053.png" id="3_cquau"]
+[ext_resource type="Texture2D" uid="uid://qyngwgpdgila" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0026.png" id="4_e5ia8"]
+[ext_resource type="Texture2D" uid="uid://ctufkj6rgpxn1" path="res://assets/kenney_rpg-urban-pack/Tiles/tile_0348.png" id="5_ar14i"]
+[ext_resource type="Texture2D" uid="uid://btcnfnria6m48" path="res://assets/asesprite/vault_door.png" id="5_gxf3j"]
+[ext_resource type="Texture2D" uid="uid://3tfgajyeq400" path="res://assets/light.jpg" id="6_7gxib"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5st2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cquau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e5ia8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cquau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dty86"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tue6d")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(255, 253)
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_n5st2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_dty86")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = 84.0
+offset_right = 303.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You didn't escape in time!
+Press R to restart"
+horizontal_alignment = 1
+
+[node name="VaultDoor" type="Sprite2D" parent="."]
+position = Vector2(332, 199)
+scale = Vector2(0.953125, 2)
+texture = ExtResource("5_gxf3j")
+
+[node name="Guard" type="Sprite2D" parent="."]
+modulate = Color(0.407843, 0.407843, 0.407843, 1)
+position = Vector2(254, 180)
+scale = Vector2(3, 3)
+texture = ExtResource("5_ar14i")
+
+[node name="PointLight2D" type="PointLight2D" parent="Guard"]
+position = Vector2(-2, 0)
+color = Color(0.596078, 0.0313726, 0.0941176, 1)
+energy = 5.0
+texture = ExtResource("6_7gxib")
+texture_scale = 0.02
+
+[node name="PointLight2D2" type="PointLight2D" parent="Guard"]
+position = Vector2(2, 0)
+color = Color(0.596078, 0.0313726, 0.0941176, 1)
+energy = 5.0
+texture = ExtResource("6_7gxib")
+texture_scale = 0.02
