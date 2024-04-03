@@ -37,9 +37,9 @@ A-S2 Jewels
 A-S3 Battery
 A-S4 Coins
 
-A-T1 Relics
-A-T2 Weaponry
-A-T3 Weaponry
+A-T1 Relic
+A-T2 Tesseract
+A-T3 Ancient Scroll
 
 B-S2 -----
 B-S3 -----
@@ -59,7 +59,7 @@ offset_bottom = 81.0
 theme = SubResource("Theme_tihyv")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "
-A-L1 Armor
+A-L1 Mirror
 A-L2 -----
 
 
